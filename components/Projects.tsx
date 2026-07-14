@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
   {
@@ -37,9 +38,14 @@ export default function Projects() {
               className="rounded-2xl border border-slate-800 bg-slate-900 overflow-hidden hover:border-blue-500 transition"
             >
               {/* Image Placeholder */}
-              <div className="h-64 bg-slate-800 flex items-center justify-center text-6xl">
-                🍽️
-              </div>
+              <div className="relative h-64 w-full">
+  <Image
+    src="/projects/na-kirraak-adda.png"
+    alt="Na Kirraak Adda Website"
+    fill
+    className="object-cover"
+  />
+</div>
 
               <div className="p-8">
                 <span className="text-blue-400 text-sm uppercase">
