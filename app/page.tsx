@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 import Process from "@/components/Process";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -8,7 +10,7 @@ import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <>
+   <>
   <Navbar />
   <Hero />
   <Technologies />
@@ -16,6 +18,8 @@ export default function Home() {
   <Services />
   <Projects />
   <Process />
+  <Contact />
+  <Footer />
 </>
   );
 }

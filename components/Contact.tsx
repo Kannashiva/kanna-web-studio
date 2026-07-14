@@ -1,85 +1,104 @@
-export default function About() {
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+  FaInstagram,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
+
+const contacts = [
+  {
+    icon: <FaPhoneAlt className="text-blue-500 text-2xl" />,
+    title: "Phone",
+    value: "+91 XXXXX XXXXX",
+  },
+  {
+    icon: <FaEnvelope className="text-red-500 text-2xl" />,
+    title: "Email",
+    value: "your@email.com",
+  },
+  {
+    icon: <FaMapMarkerAlt className="text-green-500 text-2xl" />,
+    title: "Location",
+    value: "Hyderabad, Telangana",
+  },
+];
+
+const socials = [
+  {
+    icon: <FaWhatsapp className="text-3xl text-green-500" />,
+    href: "#",
+  },
+  {
+    icon: <FaInstagram className="text-3xl text-pink-500" />,
+    href: "#",
+  },
+  {
+    icon: <FaGithub className="text-3xl text-white" />,
+    href: "#",
+  },
+  {
+    icon: <FaLinkedin className="text-3xl text-blue-500" />,
+    href: "#",
+  },
+];
+
+export default function Contact() {
   return (
-    <section
-      id="about"
-      className="bg-slate-950 py-24 text-white"
-    >
+    <section id="contact" className="bg-slate-950 py-24">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="text-center">
+          <p className="text-blue-400 uppercase tracking-widest font-semibold">
+            Contact
+          </p>
 
-          {/* Left Side */}
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-white">
+            Let's Build Something Amazing
+          </h2>
 
-          <div className="flex justify-center">
+          <p className="mt-5 text-slate-400 max-w-2xl mx-auto">
+            Have a project in mind? I'd love to hear about it.
+            Let's create a modern website for your business.
+          </p>
+        </div>
 
-            <div className="w-72 h-72 rounded-full border-4 border-blue-500 bg-slate-800 flex items-center justify-center text-7xl">
-              👨‍💻
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+
+          {contacts.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-2xl border border-slate-800 bg-slate-900 p-8 text-center"
+            >
+              <div className="flex justify-center">
+                {item.icon}
+              </div>
+
+              <h3 className="mt-5 text-xl font-semibold text-white">
+                {item.title}
+              </h3>
+
+              <p className="mt-3 text-slate-400">
+                {item.value}
+              </p>
             </div>
+          ))}
 
-          </div>
+        </div>
 
-          {/* Right Side */}
-
-          <div>
-
-            <p className="text-blue-400 uppercase tracking-widest font-semibold">
-              About Me
-            </p>
-
-            <h2 className="mt-4 text-5xl font-bold">
-              Hi, I'm Shiva 👋
-            </h2>
-
-            <h3 className="mt-2 text-2xl text-slate-300">
-              Founder of Kanna Web Studio
-            </h3>
-
-            <p className="mt-8 text-slate-400 leading-8">
-              I design and develop modern, responsive and SEO-friendly
-              websites that help businesses establish a strong online
-              presence. My goal is to create websites that are fast,
-              visually appealing and focused on delivering results.
-            </p>
-
-            <div className="mt-10 grid grid-cols-2 gap-5">
-
-              <div className="rounded-xl bg-slate-900 p-4 border border-slate-800">
-                ✅ Responsive Design
-              </div>
-
-              <div className="rounded-xl bg-slate-900 p-4 border border-slate-800">
-                ⚡ Fast Performance
-              </div>
-
-              <div className="rounded-xl bg-slate-900 p-4 border border-slate-800">
-                🔍 SEO Friendly
-              </div>
-
-              <div className="rounded-xl bg-slate-900 p-4 border border-slate-800">
-                🎨 Modern UI
-              </div>
-
-            </div>
-
-            <div className="mt-10 flex flex-wrap gap-5">
-
-              <a
-                href="#contact"
-                className="rounded-xl bg-blue-600 px-8 py-4 font-semibold hover:bg-blue-700 transition"
-              >
-                Let's Talk
-              </a>
-
-              <button
-                className="rounded-xl border border-slate-700 px-8 py-4 hover:border-blue-500 transition"
-              >
-                Download Resume
-              </button>
-
-            </div>
-
-          </div>
-
+        <div className="mt-12 flex justify-center gap-8">
+          {socials.map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              className="transition hover:scale-110"
+            >
+              {social.icon}
+            </a>
+          ))}
         </div>
 
       </div>
