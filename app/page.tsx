@@ -1,3 +1,5 @@
+import FAQ from "@/components/FAQ";
+import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
 import Process from "@/components/Process";
@@ -12,12 +14,16 @@ export default function Home() {
   return (
    <>
   <Navbar />
+  <div className="pt-20">
   <Hero />
+</div>
   <Technologies />
   <About />
   <Services />
   <Projects />
   <Process />
+  <Pricing />
+  <FAQ />
   <Contact />
   <Footer />
 </>

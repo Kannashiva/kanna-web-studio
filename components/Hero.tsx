@@ -1,55 +1,108 @@
+"use client";
+
+import { motion } from "framer-motion";
 export default function Hero() {
   return (
-    <section className="bg-slate-950 text-white">
-      <div className="mx-auto flex min-h-[90vh] max-w-7xl flex-col items-center justify-center px-6 text-center">
+    <section className="min-h-screen flex items-center bg-white px-6">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
-        <p className="mb-4 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-400">
-          🚀 Welcome to Kanna Web Studio
-        </p>
+        {/* Left Content */}
+        <div>
 
-        <h1 className="max-w-4xl text-5xl font-extrabold leading-tight md:text-7xl">
-          Modern Websites That
-          <span className="text-blue-500"> Help Businesses Grow</span>
-        </h1>
+          <p className="text-blue-600 font-semibold mb-4">
+            Kanna Web Studio
+          </p>
 
-        <p className="mt-8 max-w-2xl text-lg text-slate-300">
-          We design and develop premium, responsive and SEO-friendly
-          websites for restaurants, salons, startups and local businesses.
-        </p>
+          <motion.h1
+  initial={{
+    opacity: 0,
+    y: 40,
+  }}
+  animate={{
+    opacity: 1,
+    y: 0,
+  }}
+  transition={{
+    duration: 0.8,
+  }}
+  className="text-5xl md:text-7xl font-bold"
+>
+  Modern Websites That Help Businesses Grow Online
+</motion.h1>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
 
-          <a
-            href="#portfolio"
-            className="rounded-xl bg-blue-600 px-8 py-4 font-semibold transition hover:bg-blue-700"
-          >
-            View Portfolio
-          </a>
+          <motion.p
+  initial={{
+    opacity:0,
+    y:30,
+  }}
+  animate={{
+    opacity:1,
+    y:0,
+  }}
+  transition={{
+    duration:0.8,
+    delay:0.2,
+  }}
+>
+I design and develop fast, responsive and SEO-friendly websites for restaurants, startups and local businesses.
+</motion.p>
 
-          <a
-            href="#contact"
-            className="rounded-xl border border-slate-700 px-8 py-4 font-semibold transition hover:border-blue-500 hover:text-blue-400"
-          >
-            Get Free Quote
-          </a>
+
+          <div className="mt-8 flex gap-4">
+
+            <motion.div
+initial={{opacity:0,y:20}}
+animate={{opacity:1,y:0}}
+transition={{duration:0.8,delay:0.4}}
+>
+
+{/* Your buttons */}
+
+</motion.div>
+
+
+            <a
+              href="#contact"
+              className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-100 transition"
+            >
+              Let's Talk
+            </a>
+
+          </div>
 
         </div>
 
-        <div className="mt-16 flex flex-wrap justify-center gap-8 text-slate-400">
 
-          <div>
-            <h2 className="text-3xl font-bold text-white">1+</h2>
-            <p>Live Projects</p>
-          </div>
+        {/* Right Side Visual */}
+        <div className="flex justify-center">
 
-          <div>
-            <h2 className="text-3xl font-bold text-white">100%</h2>
-            <p>Responsive Design</p>
-          </div>
+          <div className="w-full max-w-md bg-gray-100 rounded-2xl p-8 shadow-lg">
 
-          <div>
-            <h2 className="text-3xl font-bold text-white">24/7</h2>
-            <p>Support</p>
+            <h3 className="text-2xl font-semibold mb-4">
+              Website Solutions
+            </h3>
+
+            <ul className="space-y-3 text-gray-600">
+
+              <li>
+                ✓ Business Websites
+              </li>
+
+              <li>
+                ✓ Restaurant Websites
+              </li>
+
+              <li>
+                ✓ Portfolio Websites
+              </li>
+
+              <li>
+                ✓ SEO Optimized Design
+              </li>
+
+            </ul>
+
           </div>
 
         </div>

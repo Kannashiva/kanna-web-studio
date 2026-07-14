@@ -1,3 +1,4 @@
+import Reveal from "./Reveal";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -59,7 +60,11 @@ const technologies = [
 
 export default function Technologies() {
   return (
-    <section className="bg-slate-900 py-24">
+  <Reveal>
+    <section
+      id="Technologies"
+      className="bg-slate-950 py-24"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center">
           <p className="text-blue-400 font-semibold uppercase tracking-widest">
@@ -94,5 +99,6 @@ export default function Technologies() {
         </div>
       </div>
     </section>
+        </Reveal>
   );
 }

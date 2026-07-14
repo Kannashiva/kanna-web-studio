@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "./Reveal";
 import Image from "next/image";
 
 const projects = [
@@ -14,7 +15,11 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="bg-slate-950 py-24">
+    <Reveal>
+      <section
+        id="projects"
+        className="bg-slate-950 py-24"
+      >
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center">
@@ -84,5 +89,6 @@ export default function Projects() {
 
       </div>
     </section>
+        </Reveal>
   );
 }

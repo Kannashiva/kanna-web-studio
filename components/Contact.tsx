@@ -1,3 +1,4 @@
+import Reveal from "./Reveal";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -8,100 +9,209 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
+
 const contacts = [
   {
-    icon: <FaPhoneAlt className="text-blue-500 text-2xl" />,
+    icon: <FaPhoneAlt />,
     title: "Phone",
     value: "+91 XXXXX XXXXX",
   },
   {
-    icon: <FaEnvelope className="text-red-500 text-2xl" />,
+    icon: <FaEnvelope />,
     title: "Email",
-    value: "your@email.com",
+    value: "hello@kannawebstudio.com",
   },
   {
-    icon: <FaMapMarkerAlt className="text-green-500 text-2xl" />,
+    icon: <FaMapMarkerAlt />,
     title: "Location",
     value: "Hyderabad, Telangana",
   },
 ];
 
+
 const socials = [
   {
-    icon: <FaWhatsapp className="text-3xl text-green-500" />,
+    icon: <FaWhatsapp />,
     href: "#",
+    color: "text-green-500",
   },
   {
-    icon: <FaInstagram className="text-3xl text-pink-500" />,
+    icon: <FaInstagram />,
     href: "#",
+    color: "text-pink-500",
   },
   {
-    icon: <FaGithub className="text-3xl text-white" />,
+    icon: <FaGithub />,
     href: "#",
+    color: "text-white",
   },
   {
-    icon: <FaLinkedin className="text-3xl text-blue-500" />,
+    icon: <FaLinkedin />,
     href: "#",
+    color: "text-blue-500",
   },
 ];
 
+
 export default function Contact() {
+
   return (
-    <section id="contact" className="bg-slate-950 py-24">
+  <Reveal>
+    <section
+      id="contact"
+      className="bg-slate-950 py-24"
+    >
+
       <div className="max-w-7xl mx-auto px-6">
 
+
+        {/* Heading */}
+
         <div className="text-center">
-          <p className="text-blue-400 uppercase tracking-widest font-semibold">
+
+
+          <p className="text-blue-400 uppercase tracking-[4px] font-semibold">
             Contact
           </p>
+
 
           <h2 className="mt-4 text-4xl md:text-5xl font-bold text-white">
             Let's Build Something Amazing
           </h2>
 
-          <p className="mt-5 text-slate-400 max-w-2xl mx-auto">
-            Have a project in mind? I'd love to hear about it.
-            Let's create a modern website for your business.
+
+          <p className="mt-6 max-w-2xl mx-auto text-slate-400 text-lg">
+            Have a website idea or business project?
+            Let's discuss how Kanna Web Studio can help
+            you build a strong online presence.
           </p>
+
+
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
 
-          {contacts.map((item) => (
+
+
+        {/* Contact Cards */}
+
+        <div className="mt-16 grid gap-8 md:grid-cols-3">
+
+
+          {contacts.map((item)=>(
+
+
             <div
               key={item.title}
-              className="rounded-2xl border border-slate-800 bg-slate-900 p-8 text-center"
+              className="
+              rounded-2xl
+              border
+              border-slate-800
+              bg-slate-900
+              p-8
+              text-center
+              hover:-translate-y-2
+              hover:border-blue-500
+              transition
+              "
             >
-              <div className="flex justify-center">
+
+
+              <div className="
+              mx-auto
+              flex
+              h-14
+              w-14
+              items-center
+              justify-center
+              rounded-full
+              bg-blue-600
+              text-white
+              text-2xl
+              "
+              >
                 {item.icon}
               </div>
+
 
               <h3 className="mt-5 text-xl font-semibold text-white">
                 {item.title}
               </h3>
 
+
               <p className="mt-3 text-slate-400">
                 {item.value}
               </p>
+
+
             </div>
+
+
           ))}
+
 
         </div>
 
-        <div className="mt-12 flex justify-center gap-8">
-          {socials.map((social, index) => (
-            <a
-              key={index}
-              href={social.href}
-              target="_blank"
-              className="transition hover:scale-110"
-            >
-              {social.icon}
-            </a>
-          ))}
+
+
+        {/* CTA */}
+
+        <div className="mt-12 flex flex-col items-center">
+
+
+          <a
+            href="#"
+            className="
+            flex
+            items-center
+            gap-3
+            rounded-xl
+            bg-green-600
+            px-8
+            py-4
+            text-white
+            font-semibold
+            hover:bg-green-700
+            transition
+            "
+          >
+            <FaWhatsapp />
+            Start Project Discussion
+          </a>
+
+
+
+          {/* Social Icons */}
+
+          <div className="mt-10 flex gap-8">
+
+
+            {socials.map((social,index)=>(
+
+
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                className={`text-3xl ${social.color} hover:scale-125 transition`}
+              >
+
+                {social.icon}
+
+              </a>
+
+
+            ))}
+
+
+          </div>
+
+
         </div>
+
 
       </div>
+
     </section>
+    </Reveal>
   );
 }
