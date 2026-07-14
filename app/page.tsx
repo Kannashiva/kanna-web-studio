@@ -1,3 +1,4 @@
+import WhatsAppButton from "@/components/WhatsAppButton";
 import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
@@ -25,6 +26,7 @@ export default function Home() {
   <Pricing />
   <FAQ />
   <Contact />
+  <WhatsAppButton />
   <Footer />
 </>
   );
