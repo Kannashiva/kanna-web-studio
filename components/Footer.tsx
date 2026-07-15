@@ -9,10 +9,18 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer className="relative overflow-hidden border-t border-[#D4AF37]/20 bg-[#050505] text-white">
 
-        <div className="grid gap-12 md:grid-cols-4">
+      {/* Background Glow */}
+
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -left-40 top-10 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-[140px]" />
+        <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-[140px]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+
+        <div className="grid gap-14 md:grid-cols-4">
 
           {/* Brand */}
 
@@ -20,25 +28,26 @@ export default function Footer() {
 
             <Link
               href="/"
-              className="flex items-center gap-4"
+              className="flex items-center gap-5"
             >
+
               <Image
                 src="/Logo.png"
                 alt="Kanna Web Studio"
-                width={65}
-                height={65}
-                className="rounded-full"
+                width={72}
+                height={72}
+                className="rounded-full shadow-[0_0_30px_rgba(212,175,55,0.25)]"
               />
 
-              <div className="leading-none">
+              <div>
 
                 <h2
                   className="
-                  text-white
-                  text-2xl
-                  font-extrabold
+                  text-3xl
+                  font-black
                   uppercase
                   tracking-[0.35em]
+                  text-white
                   "
                 >
                   KANNA
@@ -46,11 +55,12 @@ export default function Footer() {
 
                 <p
                   className="
-                  mt-1
-                  text-[12px]
+                  mt-2
                   uppercase
                   tracking-[0.55em]
                   text-[#D4AF37]
+                  text-sm
+                  font-semibold
                   "
                 >
                   WEB STUDIO
@@ -60,29 +70,32 @@ export default function Footer() {
 
             </Link>
 
-            <p className="mt-6 max-w-md leading-8 text-slate-400">
-              Building premium, responsive and SEO-friendly websites
-              that help restaurants, startups and local businesses
-              grow their online presence.
+            <p className="mt-8 max-w-lg leading-8 text-gray-400">
+              We build premium, responsive and SEO-optimized websites that help
+              restaurants, startups and local businesses establish a powerful
+              online presence and convert visitors into customers.
             </p>
 
             <Link
               href="#contact"
               className="
-              inline-block
-              mt-8
-              rounded-xl
+              mt-10
+              inline-flex
+              items-center
+              rounded-full
               bg-[#D4AF37]
-              px-7
-              py-3
-              font-semibold
+              px-8
+              py-4
+              font-bold
               text-black
-              hover:bg-[#E5C158]
-              transition
-              shadow-lg
+              transition-all
+              duration-300
+              hover:scale-105
+              hover:bg-[#E6C65A]
+              shadow-[0_10px_35px_rgba(212,175,55,0.30)]
               "
             >
-              Start a Project
+              🚀 Start Your Project
             </Link>
 
           </div>
@@ -91,53 +104,38 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-lg font-bold text-white">
+            <h3 className="text-xl font-bold text-white">
               Navigation
             </h3>
 
-            <div className="mt-6 space-y-4">
+            <div className="mt-8 space-y-4">
 
-              <Link
-                href="#home"
-                className="block text-slate-400 hover:text-[#D4AF37] transition"
-              >
-                Home
-              </Link>
+              {[
+                "Home",
+                "Services",
+                "Projects",
+                "Process",
+                "Pricing",
+                "About",
+                "Contact",
+              ].map((item) => (
 
-              <Link
-                href="#services"
-                className="block text-slate-400 hover:text-[#D4AF37] transition"
-              >
-                Services
-              </Link>
+                <Link
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="
+                  block
+                  text-gray-400
+                  transition-all
+                  duration-300
+                  hover:text-[#D4AF37]
+                  hover:translate-x-2
+                  "
+                >
+                  {item}
+                </Link>
 
-              <Link
-                href="#projects"
-                className="block text-slate-400 hover:text-[#D4AF37] transition"
-              >
-                Projects
-              </Link>
-
-              <Link
-                href="#pricing"
-                className="block text-slate-400 hover:text-[#D4AF37] transition"
-              >
-                Pricing
-              </Link>
-
-              <Link
-                href="#about"
-                className="block text-slate-400 hover:text-[#D4AF37] transition"
-              >
-                About
-              </Link>
-
-              <Link
-                href="#contact"
-                className="block text-slate-400 hover:text-[#D4AF37] transition"
-              >
-                Contact
-              </Link>
+              ))}
 
             </div>
 
@@ -147,27 +145,35 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-lg font-bold text-white">
+            <h3 className="text-xl font-bold text-white">
               Services
             </h3>
 
-            <div className="mt-6 space-y-4 text-slate-400">
+            <div className="mt-8 space-y-4">
 
-              <p className="hover:text-[#D4AF37] transition cursor-default">
-                Business Websites
-              </p>
+              {[
+                "Business Websites",
+                "Restaurant Websites",
+                "Landing Pages",
+                "Portfolio Websites",
+                "Website Maintenance",
+              ].map((service) => (
 
-              <p className="hover:text-[#D4AF37] transition cursor-default">
-                Restaurant Websites
-              </p>
+                <p
+                  key={service}
+                  className="
+                  cursor-default
+                  text-gray-400
+                  transition-all
+                  duration-300
+                  hover:text-[#D4AF37]
+                  hover:translate-x-2
+                  "
+                >
+                  {service}
+                </p>
 
-              <p className="hover:text-[#D4AF37] transition cursor-default">
-                Landing Pages
-              </p>
-
-              <p className="hover:text-[#D4AF37] transition cursor-default">
-                Website Maintenance
-              </p>
+              ))}
 
             </div>
 
@@ -175,90 +181,82 @@ export default function Footer() {
 
         </div>
 
+        {/* Divider */}
+
+        <div className="my-12 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent" />
+
         {/* Bottom */}
 
-        <div
-          className="
-          mt-14
-          border-t
-          border-slate-800
-          pt-8
-          flex
-          flex-col
-          md:flex-row
-          items-center
-          justify-between
-          gap-6
-          "
-        >
+        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
 
-          <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} KANNA WEB STUDIO. All Rights Reserved.
+          <p className="text-sm tracking-wide text-gray-500">
+            © {new Date().getFullYear()}{" "}
+            <span className="font-semibold text-[#D4AF37]">
+              KANNA WEB STUDIO
+            </span>
+            . All Rights Reserved.
           </p>
 
-          <div className="flex items-center gap-5 text-2xl">
+          {/* Social Icons */}
 
-            <a
-              href="https://wa.me/918143218054"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-              text-slate-400
-              hover:text-[#D4AF37]
-              hover:scale-110
-              transition
-              "
-            >
-              <FaWhatsapp />
-            </a>
+          <div className="flex items-center gap-5">
 
-            <a
-              href="https://www.instagram.com/kannawebstudio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-              text-slate-400
-              hover:text-[#D4AF37]
-              hover:scale-110
-              transition
-              "
-            >
-              <FaInstagram />
-            </a>
+            {[
+              {
+                icon: <FaWhatsapp />,
+                link: "https://wa.me/918143218054",
+              },
+              {
+                icon: <FaInstagram />,
+                link: "https://www.instagram.com/kannawebstudio",
+              },
+              {
+                icon: <FaGithub />,
+                link: "https://github.com/Kannashiva",
+              },
+              {
+                icon: <FaLinkedin />,
+                link: "https://www.linkedin.com/",
+              },
+            ].map((social, index) => (
 
-            <a
-              href="https://github.com/Kannashiva"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-              text-slate-400
-              hover:text-[#D4AF37]
-              hover:scale-110
-              transition
-              "
-            >
-              <FaGithub />
-            </a>
+              <a
+                key={index}
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                flex
+                h-12
+                w-12
+                items-center
+                justify-center
+                rounded-full
+                border
+                border-[#D4AF37]/20
+                bg-white/[0.03]
+                text-xl
+                text-gray-300
+                backdrop-blur-xl
+                transition-all
+                duration-300
+                hover:scale-110
+                hover:border-[#D4AF37]
+                hover:text-[#D4AF37]
+                hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]
+                "
+              >
+                {social.icon}
+              </a>
 
-            <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-              text-slate-400
-              hover:text-[#D4AF37]
-              hover:scale-110
-              transition
-              "
-            >
-              <FaLinkedin />
-            </a>
+            ))}
 
           </div>
 
         </div>
 
       </div>
+
     </footer>
   );
 }

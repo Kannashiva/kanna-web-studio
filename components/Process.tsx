@@ -9,148 +9,204 @@ import {
 const steps = [
   {
     icon: <FaSearch />,
-    title: "Discover",
+    title: "Consultation",
     description:
-      "We understand your business, goals, customers and requirements to create the right strategy.",
+      "We discuss your business, goals and target audience to understand exactly what your website needs.",
   },
   {
     icon: <FaPencilRuler />,
-    title: "Design",
+    title: "Planning & Design",
     description:
-      "I create a modern design focused on user experience, brand identity and customer trust.",
+      "A modern, user-friendly design is created to reflect your brand and provide the best user experience.",
   },
   {
     icon: <FaCode />,
-    title: "Develop",
+    title: "Development",
     description:
-      "Your website is built using modern technologies with responsive design and strong performance.",
+      "Your website is built using the latest technologies with responsive design, speed and SEO best practices.",
   },
   {
     icon: <FaRocket />,
-    title: "Launch",
+    title: "Launch & Support",
     description:
-      "After testing everything, your website goes live with ongoing support when needed.",
+      "After testing and optimization, your website goes live with continuous support whenever you need it.",
   },
 ];
 
-
 export default function Process() {
-
   return (
-  <Reveal>
-    <section
-      id="process"
-      className="bg-slate-900 py-24"
-    >
-    
+    <Reveal>
+      <section
+        id="process"
+        className="relative overflow-hidden bg-[#050505] py-24 text-white"
+      >
+        {/* Background Glow */}
 
-      <div className="max-w-7xl mx-auto px-6">
+        <div className="absolute inset-0 overflow-hidden">
 
+          <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-3xl" />
 
-        {/* Heading */}
-
-        <div className="text-center">
-
-
-          <p className="text-blue-400 font-semibold uppercase tracking-[4px]">
-            My Process
-          </p>
-
-
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-white">
-            Simple Process.
-            <br />
-            Powerful Results.
-          </h2>
-
-
-          <p className="mt-6 max-w-2xl mx-auto text-slate-400 text-lg">
-            From the first conversation to the final launch,
-            I follow a clear process to build websites that help
-            businesses grow online.
-          </p>
-
+          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-3xl" />
 
         </div>
 
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
 
+          {/* Heading */}
 
-        {/* Steps */}
+          <div className="text-center">
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <span className="inline-block rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.35em] text-[#D4AF37]">
+              OUR PROCESS
+            </span>
 
+            <h2 className="mt-8 text-5xl md:text-6xl font-black leading-tight">
+              From Idea
+              <span className="block text-[#D4AF37]">
+                To Launch
+              </span>
+            </h2>
 
-          {steps.map((step,index)=>(
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-400">
+              Building a professional website should be simple and transparent.
+              Here's how we transform your idea into a high-performing digital
+              experience.
+            </p>
 
-            <div
-              key={step.title}
+          </div>
+
+          {/* Steps */}
+
+          <div className="relative mt-24 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+
+            {steps.map((step, index) => (
+
+              <div
+                key={step.title}
+                className="
+                relative
+                group
+                overflow-hidden
+                rounded-3xl
+                border
+                border-[#D4AF37]/20
+                bg-[#111111]
+                p-8
+                transition-all
+                duration-500
+                hover:-translate-y-3
+                hover:border-[#D4AF37]
+                hover:shadow-[0_20px_60px_rgba(212,175,55,0.25)]
+                "
+              >
+
+                {/* Number */}
+
+                <div
+                  className="
+                  absolute
+                  right-6
+                  top-6
+                  text-6xl
+                  font-black
+                  text-[#D4AF37]/10
+                  transition
+                  duration-300
+                  group-hover:text-[#D4AF37]/20
+                  "
+                >
+                  0{index + 1}
+                </div>
+
+                {/* Icon */}
+
+                <div
+                  className="
+                  flex
+                  h-20
+                  w-20
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  border
+                  border-[#D4AF37]/20
+                  bg-[#D4AF37]/10
+                  text-3xl
+                  text-[#D4AF37]
+                  transition-all
+                  duration-300
+                  group-hover:scale-110
+                  group-hover:rotate-6
+                  group-hover:bg-[#D4AF37]
+                  group-hover:text-black
+                  "
+                >
+                  {step.icon}
+                </div>
+
+                <h3 className="mt-8 text-2xl font-bold">
+                  {step.title}
+                </h3>
+
+                <p className="mt-5 leading-8 text-gray-400">
+                  {step.description}
+                </p>
+
+                {/* Bottom Line */}
+
+                <div
+                  className="
+                  mt-8
+                  h-1
+                  w-16
+                  rounded-full
+                  bg-[#D4AF37]
+                  transition-all
+                  duration-500
+                  group-hover:w-full
+                  "
+                />
+
+              </div>
+
+            ))}
+
+          </div>
+
+          {/* Bottom CTA */}
+
+          <div className="mt-20 text-center">
+
+            <p className="text-lg text-gray-400">
+              Ready to turn your business into a powerful online brand?
+            </p>
+
+            <a
+              href="#contact"
               className="
-              group
-              relative
-              rounded-2xl
-              border
-              border-slate-800
-              bg-slate-950
-              p-8
+              mt-8
+              inline-flex
+              items-center
+              rounded-xl
+              bg-[#D4AF37]
+              px-8
+              py-4
+              font-semibold
+              text-black
               transition-all
               duration-300
-              hover:-translate-y-3
-              hover:border-blue-500
+              hover:scale-105
+              hover:bg-[#E5C158]
+              hover:shadow-[0_10px_35px_rgba(212,175,55,0.45)]
               "
             >
+              Start Your Project
+            </a>
 
-
-              {/* Number */}
-
-              <div className="absolute top-5 right-5 text-5xl font-bold text-slate-800 group-hover:text-blue-900 transition">
-                0{index + 1}
-              </div>
-
-
-
-              {/* Icon */}
-
-              <div className="
-              flex
-              h-16
-              w-16
-              items-center
-              justify-center
-              rounded-xl
-              bg-blue-600
-              text-3xl
-              text-white
-              "
-              >
-                {step.icon}
-              </div>
-
-
-
-              <h3 className="mt-8 text-2xl font-bold text-white">
-                {step.title}
-              </h3>
-
-
-              <p className="mt-4 text-slate-400 leading-7">
-                {step.description}
-              </p>
-
-
-            </div>
-
-
-          ))}
-
+          </div>
 
         </div>
-
-
-      </div>
-
-
-    </section>
-        </Reveal>
-
+      </section>
+    </Reveal>
   );
 }

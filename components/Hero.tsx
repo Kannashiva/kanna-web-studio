@@ -1,43 +1,64 @@
 "use client";
 
 import { motion } from "framer-motion";
+import {
+  FaArrowRight,
+  FaCheckCircle,
+  FaLaptopCode,
+  FaMobileAlt,
+  FaSearch,
+  FaRocket,
+} from "react-icons/fa";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white flex items-center"
-    ><div className="absolute inset-0 overflow-hidden">
+      className="relative min-h-screen overflow-hidden bg-[#020617] text-white flex items-center"
+    >
+      {/* Background Glow */}
 
-  <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
+      <div className="absolute inset-0 overflow-hidden">
 
-  <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute -top-52 -left-52 h-[500px] w-[500px] rounded-full bg-[#D4AF37]/10 blur-[140px]" />
 
-</div>
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="absolute bottom-0 right-0 h-[450px] w-[450px] rounded-full bg-[#D4AF37]/5 blur-[120px]" />
 
-        {/* Left Content */}
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24 grid lg:grid-cols-2 gap-20 items-center">
+
+        {/* LEFT */}
 
         <div>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm font-semibold tracking-wider text-blue-400"
           >
-            🚀 Kanna Web Studio
-          </motion.p>
+            <span className="inline-flex items-center rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-[#D4AF37]">
+              Premium Web Development
+            </span>
+          </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mt-8 text-5xl font-bold leading-tight md:text-7xl"
+            className="mt-8 text-5xl md:text-7xl font-black leading-tight"
           >
-            Modern Websites That Help
-            <span className="block text-blue-500">
-              Businesses Grow Online
+            Modern Websites
+            <br />
+
+            <span className="text-white">
+              That Help
+            </span>
+
+            <br />
+
+            <span className="text-[#D4AF37]">
+              Businesses Grow
             </span>
           </motion.h1>
 
@@ -45,92 +66,215 @@ export default function Hero() {
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-8 max-w-2xl text-lg leading-8 text-slate-300"
+            className="mt-8 max-w-xl text-lg leading-9 text-slate-400"
           >
-            I design and develop fast, responsive and SEO-friendly
-            websites for restaurants, startups and local businesses.
-            Every website is built to look great, perform fast and
+            We build modern, responsive and SEO-optimized websites that
+            help businesses establish credibility, generate more leads and
             convert visitors into customers.
           </motion.p>
+
+          {/* Buttons */}
 
           <motion.div
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ delay: 0.4 }}
             className="mt-10 flex flex-wrap gap-5"
           >
-            <a
-              href="#projects"
-              className="
-rounded-xl
-bg-blue-600
-px-8
-py-4
-font-semibold
-transition-all
-duration-300
-hover:bg-blue-700
-hover:scale-105
-"
-            >
-              View Projects
-            </a>
 
             <a
               href="#contact"
               className="
-rounded-xl
-border
-border-slate-700
-px-8
-py-4
-transition-all
-duration-300
-hover:border-blue-500
-hover:bg-slate-900
-hover:scale-105
-"
+              inline-flex
+              items-center
+              gap-3
+              rounded-xl
+              bg-[#D4AF37]
+              px-8
+              py-4
+              font-semibold
+              text-black
+              transition-all
+              duration-300
+              hover:scale-105
+              hover:bg-[#E5C158]
+              hover:shadow-[0_0_35px_rgba(212,175,55,0.35)]
+              "
             >
-              Let's Talk
+              Start Your Project
+
+              <FaArrowRight />
+
             </a>
+
+            <a
+              href="#projects"
+              className="
+              rounded-xl
+              border
+              border-slate-700
+              px-8
+              py-4
+              font-semibold
+              transition-all
+              duration-300
+              hover:border-[#D4AF37]
+              hover:text-[#D4AF37]
+              hover:bg-slate-900
+              "
+            >
+              View Portfolio
+            </a>
+
+          </motion.div>
+
+          {/* Stats */}
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="mt-16 grid grid-cols-3 gap-6"
+          >
+
+            <div>
+
+              <h3 className="text-3xl font-black text-[#D4AF37]">
+                10+
+              </h3>
+
+              <p className="mt-2 text-slate-400">
+                Projects
+              </p>
+
+            </div>
+
+            <div>
+
+              <h3 className="text-3xl font-black text-[#D4AF37]">
+                100%
+              </h3>
+
+              <p className="mt-2 text-slate-400">
+                Responsive
+              </p>
+
+            </div>
+
+            <div>
+
+              <h3 className="text-3xl font-black text-[#D4AF37]">
+                24/7
+              </h3>
+
+              <p className="mt-2 text-slate-400">
+                Support
+              </p>
+
+            </div>
+
           </motion.div>
 
         </div>
 
-        {/* Right Side */}
+        {/* RIGHT */}
 
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <div className="rounded-3xl border border-slate-700 bg-slate-900/80 backdrop-blur-md p-8 shadow-[0_0_50px_rgba(59,130,246,0.12)]">
 
-            <h3 className="text-3xl font-bold text-white">
-              What You'll Get
-            </h3>
+          <div
+            className="
+            rounded-3xl
+            border
+            border-white/10
+            bg-slate-900/70
+            backdrop-blur-xl
+            p-10
+            shadow-[0_20px_70px_rgba(0,0,0,0.45)]
+            "
+          >
 
-            <div className="mt-8 space-y-5">
+            <h2 className="text-3xl font-bold">
+              Why Choose
+              <span className="text-[#D4AF37]">
+                {" "}Kanna Web Studio
+              </span>
+            </h2>
 
-              <div className="rounded-xl bg-slate-800 p-5">
-                ⚡ Fast Performance
-              </div>
+            <div className="mt-10 space-y-5">
 
-              <div className="rounded-xl bg-slate-800 p-5">
-                📱 Mobile Responsive Design
-              </div>
+              {[
+                {
+                  icon: <FaLaptopCode />,
+                  title: "Modern Website Design",
+                },
+                {
+                  icon: <FaMobileAlt />,
+                  title: "Fully Mobile Responsive",
+                },
+                {
+                  icon: <FaSearch />,
+                  title: "SEO Optimized Structure",
+                },
+                {
+                  icon: <FaRocket />,
+                  title: "Fast Loading Performance",
+                },
+                {
+                  icon: <FaCheckCircle />,
+                  title: "Free Deployment Support",
+                },
+              ].map((item) => (
 
-              <div className="rounded-xl bg-slate-800 p-5">
-                🔍 SEO Friendly Structure
-              </div>
+                <div
+                  key={item.title}
+                  className="
+                  flex
+                  items-center
+                  gap-5
+                  rounded-2xl
+                  border
+                  border-white/5
+                  bg-slate-800/70
+                  p-5
+                  transition
+                  duration-300
+                  hover:border-[#D4AF37]
+                  hover:translate-x-2
+                  "
+                >
 
-              <div className="rounded-xl bg-slate-800 p-5">
-                🚀 Modern UI & User Experience
-              </div>
+                  <div
+                    className="
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
+                    rounded-xl
+                    bg-[#D4AF37]/10
+                    text-xl
+                    text-[#D4AF37]
+                    "
+                  >
+                    {item.icon}
+                  </div>
+
+                  <p className="font-medium">
+                    {item.title}
+                  </p>
+
+                </div>
+
+              ))}
 
             </div>
 
           </div>
+
         </motion.div>
 
       </div>

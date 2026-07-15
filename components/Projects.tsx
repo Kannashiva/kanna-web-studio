@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "./Reveal";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaCheckCircle } from "react-icons/fa";
 
 const projects = [
   {
@@ -25,32 +25,46 @@ export default function Projects() {
     <Reveal>
       <section
         id="projects"
-        className="bg-slate-950 py-24"
+        className="relative overflow-hidden bg-[#050505] py-24 text-white"
       >
-        <div className="max-w-7xl mx-auto px-6">
+        {/* Background Glow */}
+
+        <div className="absolute inset-0 overflow-hidden">
+
+          <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-3xl" />
+
+          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-3xl" />
+
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
 
           {/* Heading */}
 
           <div className="text-center">
 
-            <p className="text-blue-400 uppercase tracking-[4px] font-semibold">
-              Portfolio
-            </p>
+            <span className="inline-block rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.35em] text-[#D4AF37]">
+              PORTFOLIO
+            </span>
 
-            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-white">
-              Featured Projects
+            <h2 className="mt-8 text-5xl md:text-6xl font-black leading-tight">
+              Featured
+              <span className="block text-[#D4AF37]">
+                Client Project
+              </span>
             </h2>
 
-            <p className="mt-6 max-w-2xl mx-auto text-lg text-slate-400">
-              Every project is crafted with performance,
-              modern design and user experience in mind.
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-400">
+              Every project is carefully designed with performance,
+              premium aesthetics and user experience in mind to help
+              businesses grow online.
             </p>
 
           </div>
 
-          {/* Projects */}
+          {/* Project Card */}
 
-          <div className="mt-16">
+          <div className="mt-20">
 
             {projects.map((project) => (
 
@@ -61,18 +75,18 @@ export default function Projects() {
                 overflow-hidden
                 rounded-3xl
                 border
-                border-slate-800
-                bg-slate-900
+                border-[#D4AF37]/20
+                bg-[#111111]
                 transition-all
                 duration-500
-                hover:border-blue-500
-                hover:shadow-[0_20px_60px_rgba(59,130,246,0.18)]
+                hover:border-[#D4AF37]
+                hover:shadow-[0_20px_60px_rgba(212,175,55,0.25)]
                 "
               >
 
                 {/* Image */}
 
-                <div className="relative h-80 overflow-hidden">
+                <div className="relative h-96 overflow-hidden">
 
                   <Image
                     src={project.image}
@@ -86,18 +100,7 @@ export default function Projects() {
                     "
                   />
 
-                  {/* Overlay */}
-
-                  <div
-                    className="
-                    absolute
-                    inset-0
-                    bg-gradient-to-t
-                    from-black/80
-                    via-black/20
-                    to-transparent
-                    "
-                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
 
                   {/* Category */}
 
@@ -106,12 +109,15 @@ export default function Projects() {
                     <span
                       className="
                       rounded-full
-                      bg-blue-600
-                      px-4
+                      border
+                      border-[#D4AF37]
+                      bg-black/70
+                      px-5
                       py-2
                       text-sm
                       font-semibold
-                      text-white
+                      text-[#D4AF37]
+                      backdrop-blur-md
                       "
                     >
                       {project.category}
@@ -123,27 +129,31 @@ export default function Projects() {
 
                 {/* Content */}
 
-                <div className="p-8">
+                <div className="p-10">
 
-                  <h3 className="text-3xl font-bold text-white">
+                  <h3 className="text-4xl font-bold">
                     {project.title}
                   </h3>
 
-                  <p className="mt-5 leading-8 text-slate-400">
-  {project.description}
-</p>
+                  <p className="mt-6 max-w-4xl leading-8 text-gray-400">
+                    {project.description}
+                  </p>
 
-<div className="mt-6 inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-2">
-  <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+                  {/* Delivered Badge */}
 
-  <span className="text-sm font-semibold text-green-300">
-    Successfully Delivered Client Project
-  </span>
-</div>
+                  <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-green-500/30 bg-green-500/10 px-5 py-3">
+
+                    <FaCheckCircle className="text-green-400" />
+
+                    <span className="font-semibold text-green-300">
+                      Successfully Delivered Client Project
+                    </span>
+
+                  </div>
 
                   {/* Tech Stack */}
 
-                  <div className="mt-6 flex flex-wrap gap-3">
+                  <div className="mt-8 flex flex-wrap gap-4">
 
                     {project.technologies.map((tech) => (
 
@@ -152,12 +162,13 @@ export default function Projects() {
                         className="
                         rounded-full
                         border
-                        border-blue-500/30
-                        bg-blue-500/10
-                        px-4
+                        border-[#D4AF37]/30
+                        bg-[#D4AF37]/10
+                        px-5
                         py-2
                         text-sm
-                        text-blue-300
+                        font-medium
+                        text-[#D4AF37]
                         "
                       >
                         {tech}
@@ -167,35 +178,35 @@ export default function Projects() {
 
                   </div>
 
-                  {/* Live Demo Button */}
+                  {/* Button */}
 
-                  <div className="mt-8 flex items-center gap-4">
+                  <div className="mt-10">
 
                     <Link
-  href={project.live}
-  target="_blank"
-  className="
-  inline-flex
-  items-center
-  gap-3
-  rounded-xl
-  bg-gradient-to-r
-  from-blue-600
-  to-cyan-500
-  px-7
-  py-3
-  font-semibold
-  text-white
-  shadow-lg
-  transition-all
-  duration-300
-  hover:scale-105
-  hover:shadow-[0_10px_30px_rgba(59,130,246,0.4)]
-  "
->
-  <FaExternalLinkAlt />
-  Visit Live Website
-</Link>
+                      href={project.live}
+                      target="_blank"
+                      className="
+                      inline-flex
+                      items-center
+                      gap-3
+                      rounded-xl
+                      bg-[#D4AF37]
+                      px-8
+                      py-4
+                      font-semibold
+                      text-black
+                      transition-all
+                      duration-300
+                      hover:scale-105
+                      hover:bg-[#E5C158]
+                      hover:shadow-[0_10px_35px_rgba(212,175,55,0.45)]
+                      "
+                    >
+                      <FaExternalLinkAlt />
+
+                      Visit Live Website
+
+                    </Link>
 
                   </div>
 

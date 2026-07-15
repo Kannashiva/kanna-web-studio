@@ -18,57 +18,44 @@ export default function Navbar() {
   ];
 
   return (
-    <header
-      className="
-      fixed
-      top-0
-      left-0
-      w-full
-      z-50
-      bg-slate-950/90
-      backdrop-blur-xl
-      border-b
-      border-slate-800
-      shadow-lg
-      "
-    >
-      <nav className="max-w-7xl mx-auto px-6 py-3">
-        <div className="flex items-center justify-between">
+    <header className="fixed top-0 left-0 w-full z-50">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 pt-4">
+        <div
+          className="
+            flex
+            items-center
+            justify-between
+            rounded-2xl
+            border
+            border-white/10
+            bg-slate-950/70
+            backdrop-blur-2xl
+            px-6
+            py-4
+            shadow-[0_10px_40px_rgba(0,0,0,0.35)]
+          "
+        >
           {/* Logo */}
 
-          <Link href="/" className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="flex items-center gap-4 transition-transform duration-300 hover:scale-[1.02]"
+          >
             <Image
               src="/Logo.png"
               alt="Kanna Web Studio"
-              width={58}
-              height={58}
+              width={64}
+              height={64}
               priority
               className="rounded-full"
             />
 
             <div className="leading-none">
-              <h1
-                className="
-                text-white
-                text-xl
-                md:text-2xl
-                font-extrabold
-                uppercase
-                tracking-[0.35em]
-                "
-              >
+              <h1 className="text-xl md:text-2xl font-black tracking-[0.35em] text-white">
                 KANNA
               </h1>
 
-              <p
-                className="
-                mt-1
-                text-[11px]
-                uppercase
-                tracking-[0.55em]
-                text-[#D4AF37]
-                "
-              >
+              <p className="mt-2 text-[11px] tracking-[0.55em] uppercase text-[#D4AF37]">
                 WEB STUDIO
               </p>
             </div>
@@ -76,34 +63,36 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {menuItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.link}
                 className="
-                relative
-                text-slate-300
-                font-medium
-                hover:text-[#D4AF37]
-                transition-all
-                duration-300
-                group
+                  relative
+                  text-[15px]
+                  font-medium
+                  text-slate-300
+                  transition-all
+                  duration-300
+                  hover:text-white
+                  group
                 "
               >
                 {item.name}
 
                 <span
                   className="
-                  absolute
-                  left-0
-                  -bottom-2
-                  h-0.5
-                  w-0
-                  bg-[#D4AF37]
-                  transition-all
-                  duration-300
-                  group-hover:w-full
+                    absolute
+                    -bottom-2
+                    left-0
+                    h-[2px]
+                    w-0
+                    rounded-full
+                    bg-[#D4AF37]
+                    transition-all
+                    duration-300
+                    group-hover:w-full
                   "
                 />
               </Link>
@@ -114,26 +103,33 @@ export default function Navbar() {
             <Link
               href="#contact"
               className="
-              rounded-xl
-              bg-[#D4AF37]
-              px-6
-              py-3
-              font-semibold
-              text-black
-              hover:bg-[#E5C158]
-              transition
-              shadow-lg
+                rounded-xl
+                bg-[#D4AF37]
+                px-7
+                py-3
+                font-semibold
+                text-black
+                transition-all
+                duration-300
+                hover:bg-[#E6C45A]
+                hover:scale-105
+                hover:shadow-[0_0_25px_rgba(212,175,55,0.45)]
               "
             >
               Let's Talk
             </Link>
           </div>
 
-          {/* Mobile */}
+          {/* Mobile Button */}
 
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-3xl text-white"
+            className="
+              lg:hidden
+              text-white
+              text-3xl
+              transition
+            "
           >
             {open ? "✕" : "☰"}
           </button>
@@ -141,28 +137,42 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
 
-        {open && (
+        <div
+          className={`
+            lg:hidden
+            overflow-hidden
+            transition-all
+            duration-500
+            ${
+              open
+                ? "max-h-[500px] opacity-100 mt-4"
+                : "max-h-0 opacity-0 mt-0"
+            }
+          `}
+        >
           <div
             className="
-            md:hidden
-            mt-5
-            rounded-2xl
-            bg-slate-900
-            border
-            border-slate-800
-            p-6
+              rounded-2xl
+              border
+              border-white/10
+              bg-slate-950/90
+              backdrop-blur-2xl
+              p-6
+              shadow-xl
             "
           >
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-6">
               {menuItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.link}
                   onClick={() => setOpen(false)}
                   className="
-                  text-slate-300
-                  hover:text-[#D4AF37]
-                  transition
+                    text-slate-300
+                    text-lg
+                    font-medium
+                    transition
+                    hover:text-[#D4AF37]
                   "
                 >
                   {item.name}
@@ -173,22 +183,23 @@ export default function Navbar() {
                 href="#contact"
                 onClick={() => setOpen(false)}
                 className="
-                mt-3
-                text-center
-                rounded-xl
-                bg-[#D4AF37]
-                py-3
-                text-black
-                font-semibold
-                hover:bg-[#E5C158]
-                transition
+                  mt-2
+                  rounded-xl
+                  bg-[#D4AF37]
+                  py-4
+                  text-center
+                  font-semibold
+                  text-black
+                  transition-all
+                  duration-300
+                  hover:bg-[#E6C45A]
                 "
               >
                 Let's Talk
               </Link>
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

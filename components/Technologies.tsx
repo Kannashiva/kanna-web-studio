@@ -18,87 +18,166 @@ import {
 const technologies = [
   {
     name: "HTML5",
-    icon: <FaHtml5 className="text-5xl text-orange-500" />,
+    color: "text-orange-500",
+    icon: <FaHtml5 className="text-6xl" />,
   },
   {
     name: "CSS3",
-    icon: <FaCss3Alt className="text-5xl text-blue-500" />,
+    color: "text-blue-500",
+    icon: <FaCss3Alt className="text-6xl" />,
   },
   {
     name: "JavaScript",
-    icon: <FaJs className="text-5xl text-yellow-400" />,
+    color: "text-yellow-400",
+    icon: <FaJs className="text-6xl" />,
   },
   {
     name: "TypeScript",
-    icon: <SiTypescript className="text-5xl text-blue-400" />,
+    color: "text-blue-400",
+    icon: <SiTypescript className="text-6xl" />,
   },
   {
     name: "React",
-    icon: <FaReact className="text-5xl text-cyan-400" />,
+    color: "text-cyan-400",
+    icon: <FaReact className="text-6xl" />,
   },
   {
     name: "Next.js",
-    icon: <SiNextdotjs className="text-5xl text-white" />,
+    color: "text-white",
+    icon: <SiNextdotjs className="text-6xl" />,
   },
   {
     name: "Tailwind CSS",
-    icon: <SiTailwindcss className="text-5xl text-sky-400" />,
+    color: "text-sky-400",
+    icon: <SiTailwindcss className="text-6xl" />,
   },
   {
     name: "Git",
-    icon: <FaGitAlt className="text-5xl text-orange-600" />,
+    color: "text-orange-600",
+    icon: <FaGitAlt className="text-6xl" />,
   },
   {
     name: "GitHub",
-    icon: <FaGithub className="text-5xl text-white" />,
+    color: "text-white",
+    icon: <FaGithub className="text-6xl" />,
   },
   {
     name: "Vercel",
-    icon: <SiVercel className="text-5xl text-white" />,
+    color: "text-white",
+    icon: <SiVercel className="text-6xl" />,
   },
 ];
 
 export default function Technologies() {
   return (
-  <Reveal>
-    <section
-      id="Technologies"
-      className="bg-slate-950 py-24"
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center">
-          <p className="text-blue-400 font-semibold uppercase tracking-widest">
-            Technologies
-          </p>
+    <Reveal>
+      <section
+        id="technologies"
+        className="relative overflow-hidden bg-[#050505] py-28 text-white"
+      >
+        {/* Background Glow */}
 
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold text-white">
-            Built with Modern Technologies
-          </h2>
-
-          <p className="mt-5 max-w-2xl mx-auto text-slate-400 text-lg">
-            I use the latest web technologies to build fast, secure and
-            responsive websites that deliver excellent user experiences.
-          </p>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-[150px]" />
+          <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-[150px]" />
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-5">
-          {technologies.map((tech) => (
-            <div
-              key={tech.name}
-              className="group rounded-2xl border border-slate-800 bg-slate-950 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/10"
-            >
-              <div className="flex justify-center transition-transform duration-300 group-hover:scale-110">
-                {tech.icon}
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+
+          {/* Heading */}
+
+          <div className="text-center">
+
+            <p className="uppercase tracking-[0.4em] text-[#D4AF37] font-semibold">
+              TECHNOLOGIES
+            </p>
+
+            <h2 className="mt-5 text-5xl md:text-6xl font-black">
+              Built With
+              <span className="block text-[#D4AF37]">
+                Modern Technologies
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-gray-400">
+              Every website is built using modern technologies that deliver
+              outstanding performance, security and scalability.
+            </p>
+
+          </div>
+
+          {/* Technology Grid */}
+
+          <div className="mt-20 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
+
+            {technologies.map((tech) => (
+
+              <div
+                key={tech.name}
+                className="
+                group
+                rounded-3xl
+                border
+                border-[#D4AF37]/20
+                bg-white/[0.03]
+                backdrop-blur-xl
+                p-8
+                text-center
+                transition-all
+                duration-500
+                hover:-translate-y-3
+                hover:border-[#D4AF37]
+                hover:shadow-[0_20px_50px_rgba(212,175,55,0.15)]
+                "
+              >
+
+                {/* Icon */}
+
+                <div
+                  className={`
+                  flex
+                  justify-center
+                  transition-all
+                  duration-500
+                  group-hover:scale-125
+                  group-hover:rotate-6
+                  ${tech.color}
+                  `}
+                >
+                  {tech.icon}
+                </div>
+
+                {/* Divider */}
+
+                <div className="mx-auto mt-6 h-px w-14 bg-[#D4AF37]/40 transition-all duration-300 group-hover:w-20"></div>
+
+                {/* Name */}
+
+                <h3 className="mt-6 text-lg font-bold text-white">
+                  {tech.name}
+                </h3>
+
               </div>
 
-              <h3 className="mt-5 text-white font-semibold">
-                {tech.name}
-              </h3>
-            </div>
-          ))}
+            ))}
+
+          </div>
+
+          {/* Bottom Text */}
+
+          <div className="mt-20 text-center">
+
+            <p className="text-gray-400 text-lg">
+              Combining modern technologies with creative design to build
+              <span className="font-semibold text-[#D4AF37]">
+                {" "}fast, secure and high-performing websites.
+              </span>
+            </p>
+
+          </div>
+
         </div>
-      </div>
-    </section>
-        </Reveal>
+      </section>
+    </Reveal>
   );
 }
