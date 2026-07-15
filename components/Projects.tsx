@@ -1,10 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "./Reveal";
-import {
-  FaExternalLinkAlt,
-  FaGithub,
-} from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
@@ -20,7 +17,6 @@ const projects = [
       "Vercel",
     ],
     live: "https://na-kirraak-adda.vercel.app",
-    github: "https://github.com/Kannashiva/Na-Kirraak-Adda",
   },
 ];
 
@@ -134,8 +130,16 @@ export default function Projects() {
                   </h3>
 
                   <p className="mt-5 leading-8 text-slate-400">
-                    {project.description}
-                  </p>
+  {project.description}
+</p>
+
+<div className="mt-6 inline-flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-2">
+  <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+
+  <span className="text-sm font-semibold text-green-300">
+    Successfully Delivered Client Project
+  </span>
+</div>
 
                   {/* Tech Stack */}
 
@@ -163,55 +167,35 @@ export default function Projects() {
 
                   </div>
 
-                  {/* Buttons */}
+                  {/* Live Demo Button */}
 
-                  <div className="mt-8 flex flex-wrap gap-4">
-
-                    <Link
-                      href={project.live}
-                      target="_blank"
-                      className="
-                      inline-flex
-                      items-center
-                      gap-2
-                      rounded-xl
-                      bg-blue-600
-                      px-6
-                      py-3
-                      font-semibold
-                      text-white
-                      transition
-                      hover:bg-blue-700
-                      hover:scale-105
-                      "
-                    >
-                      <FaExternalLinkAlt />
-                      Live Demo
-                    </Link>
+                  <div className="mt-8 flex items-center gap-4">
 
                     <Link
-                      href={project.github}
-                      target="_blank"
-                      className="
-                      inline-flex
-                      items-center
-                      gap-2
-                      rounded-xl
-                      border
-                      border-slate-700
-                      px-6
-                      py-3
-                      font-semibold
-                      text-white
-                      transition
-                      hover:border-blue-500
-                      hover:bg-slate-800
-                      hover:scale-105
-                      "
-                    >
-                      <FaGithub />
-                      GitHub
-                    </Link>
+  href={project.live}
+  target="_blank"
+  className="
+  inline-flex
+  items-center
+  gap-3
+  rounded-xl
+  bg-gradient-to-r
+  from-blue-600
+  to-cyan-500
+  px-7
+  py-3
+  font-semibold
+  text-white
+  shadow-lg
+  transition-all
+  duration-300
+  hover:scale-105
+  hover:shadow-[0_10px_30px_rgba(59,130,246,0.4)]
+  "
+>
+  <FaExternalLinkAlt />
+  Visit Live Website
+</Link>
 
                   </div>
 
