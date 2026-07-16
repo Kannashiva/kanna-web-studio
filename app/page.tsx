@@ -1,5 +1,4 @@
 import ScrollProgress from "@/components/ScrollProgress";
-import Stats from "@/components/Stats";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
@@ -20,7 +19,6 @@ export default function Home() {
   <Navbar />
   <div className="pt-20">
   <Hero />
-  <Stats />
 </div>
   <Technologies />
   <About />
