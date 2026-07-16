@@ -14,19 +14,38 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-[#020617] text-white flex items-center"
+      className="relative min-h-screen overflow-hidden bg-[#050505] text-white flex items-center"
     >
       {/* Background Glow */}
 
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Premium Background */}
+<div className="absolute inset-0 overflow-hidden">
+  {/* Main Gold Glow */}
+  <div className="absolute -top-60 -left-60 h-[650px] w-[650px] rounded-full bg-[#D4AF37]/8 blur-[180px]" />
 
-        <div className="absolute -top-52 -left-52 h-[500px] w-[500px] rounded-full bg-[#D4AF37]/10 blur-[140px]" />
+  {/* Bottom Right Glow */}
+  <div className="absolute -bottom-56 -right-56 h-[600px] w-[600px] rounded-full bg-[#D4AF37]/6 blur-[180px]" />
 
-        <div className="absolute bottom-0 right-0 h-[450px] w-[450px] rounded-full bg-[#D4AF37]/5 blur-[120px]" />
+  {/* Center Accent Glow */}
+  <div className="absolute left-1/2 top-1/3 h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-[#D4AF37]/5 blur-[150px]" />
 
-      </div>
+  {/* Subtle Grid */}
+  <div
+    className="absolute inset-0 opacity-[0.04]"
+    style={{
+      backgroundImage: `
+        linear-gradient(rgba(212,175,55,0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,175,55,0.15) 1px, transparent 1px)
+      `,
+      backgroundSize: "60px 60px",
+    }}
+  />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24 grid lg:grid-cols-2 gap-20 items-center">
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-[#050505]/90" />
+</div>
+
+<div className="relative z-10 mx-auto grid max-w-7xl items-center gap-20 px-6 pt-32 pb-24 lg:grid-cols-2">
 
         {/* LEFT */}
 
