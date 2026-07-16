@@ -3,8 +3,6 @@ import Link from "next/link";
 import {
   FaWhatsapp,
   FaInstagram,
-  FaGithub,
-  FaLinkedin,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -209,14 +207,6 @@ export default function Footer() {
               {
                 icon: <FaInstagram />,
                 link: "https://www.instagram.com/kannawebstudio",
-              },
-              {
-                icon: <FaGithub />,
-                link: "https://github.com/Kannashiva",
-              },
-              {
-                icon: <FaLinkedin />,
-                link: "https://www.linkedin.com/",
               },
             ].map((social, index) => (
 

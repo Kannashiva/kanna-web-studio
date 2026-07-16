@@ -74,7 +74,7 @@ export default function About() {
                   shadow-lg
                   "
                 >
-                  Founder • Kanna Web Studio
+                  Founder
                 </div>
 
               </div>

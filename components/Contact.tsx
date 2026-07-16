@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import Reveal from "./Reveal";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
@@ -29,9 +29,19 @@ export default function Contact() {
     setLoading(false);
   };
 
-  const cards=[
-    {icon:<FaPhoneAlt/>,title:"Call",value:"+91 8143218054"},
-    {icon:<FaEnvelope/>,title:"Email",value:"kannawebstudio@gmail.com"},
+  const cards = [
+  {
+    icon: <FaPhoneAlt />,
+    title: "Call",
+    value: "+91 9876543210",
+    href: "tel:+919876543210",
+  },
+  {
+    icon: <FaEnvelope />,
+    title: "Email",
+    value: "hello@kannawebstudio.com",
+    href: "mailto:hello@kannawebstudio.com",
+  },
     {icon:<FaMapMarkerAlt/>,title:"Location",value:"Hyderabad, India"},
   ];
 
@@ -59,10 +69,6 @@ export default function Contact() {
                   </div>
                 </div>
               ))}
-              <div className="flex gap-4 pt-4">
-                <a href="#" className="rounded-full bg-[#D4AF37] p-4 text-black"><FaWhatsapp/></a>
-                <a href="#" className="rounded-full border border-[#D4AF37] p-4 text-[#D4AF37]"><FaInstagram/></a>
-              </div>
             </div>
 
             <form ref={form} onSubmit={sendEmail} className="rounded-3xl border border-white/10 bg-white/5 p-8 space-y-5">
