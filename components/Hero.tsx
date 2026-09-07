@@ -156,42 +156,6 @@ export default function Hero() {
             className="mt-16 grid grid-cols-3 gap-6"
           >
 
-            <div>
-
-              <h3 className="text-3xl font-black text-[#D4AF37]">
-                10+
-              </h3>
-
-              <p className="mt-2 text-slate-400">
-                Projects
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="text-3xl font-black text-[#D4AF37]">
-                100%
-              </h3>
-
-              <p className="mt-2 text-slate-400">
-                Responsive
-              </p>
-
-            </div>
-
-            <div>
-
-              <h3 className="text-3xl font-black text-[#D4AF37]">
-                24/7
-              </h3>
-
-              <p className="mt-2 text-slate-400">
-                Support
-              </p>
-
-            </div>
-
           </motion.div>
 
         </div>
