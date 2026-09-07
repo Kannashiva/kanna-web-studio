@@ -73,7 +73,7 @@ export default function Technologies() {
     <Reveal>
       <section
         id="technologies"
-        className="relative overflow-hidden bg-[#050505] py-28 text-white"
+        className="relative overflow-hidden bg-[#050505] pt-1 pb-16 text-white"
       >
         {/* Background Glow */}
 

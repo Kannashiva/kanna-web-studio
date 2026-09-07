@@ -58,7 +58,7 @@ export default function Contact() {
     <Reveal>
       <section
         id="contact"
-        className="relative overflow-hidden bg-[#050505] py-28 text-white"
+        className="relative overflow-hidden bg-[#050505] pt-1 pb-16 text-white"
       >
         <div className="absolute inset-0">
           <div className="absolute left-0 top-10 h-80 w-80 rounded-full bg-[#D4AF37]/10 blur-[120px]" />

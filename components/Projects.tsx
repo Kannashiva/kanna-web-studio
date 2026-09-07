@@ -25,7 +25,7 @@ export default function Projects() {
     <Reveal>
       <section
         id="projects"
-        className="relative overflow-hidden bg-[#050505] py-24 text-white"
+        className="relative overflow-hidden bg-[#050505] pt-1 pb-16 text-white"
       >
         {/* Background Glow */}
 
