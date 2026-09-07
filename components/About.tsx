@@ -199,11 +199,11 @@ export default function About() {
                 <div>
 
                   <h4 className="text-4xl font-black text-[#D4AF37]">
-                    10+
+                    1
                   </h4>
 
                   <p className="mt-2 text-gray-500">
-                    Projects
+                    Project
                   </p>
 
                 </div>

@@ -6,7 +6,7 @@ const plans = [
     name: "Starter Website",
     description:
       "Perfect for startups and small businesses beginning their online journey.",
-    price: "₹15,000",
+    price: "₹4,999+",
     features: [
       "3–5 Page Website",
       "Responsive Design",
@@ -21,7 +21,7 @@ const plans = [
     name: "Business Website",
     description:
       "Ideal for businesses looking to attract more customers and build credibility.",
-    price: "₹30,000",
+    price: "₹9,999+",
     popular: true,
     features: [
       "5–8 Page Website",
@@ -38,7 +38,7 @@ const plans = [
     name: "Premium Website",
     description:
       "Complete digital solution for brands that want a premium online presence.",
-    price: "₹50,000+",
+    price: "Contact Us",
     features: [
       "Unlimited Pages",
       "Premium UI/UX",
@@ -125,7 +125,7 @@ export default function Pricing() {
                     className="
                     absolute
                     left-1/2
-                    -top-5
+                    top-5
                     -translate-x-1/2
                     rounded-full
                     bg-[#D4AF37]
