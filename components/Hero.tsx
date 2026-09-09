@@ -61,25 +61,20 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mt-8 text-5xl md:text-7xl font-black leading-tight"
-          >
-            Modern Websites
-            <br />
+          <h1 className="mt-8 text-5xl md:text-7xl font-black leading-tight">
+  Modern Websites
+  <br />
 
-            <span className="text-white">
-              That Help
-            </span>
+  <span className="text-white">
+    That Help
+  </span>
 
-            <br />
+  <br />
 
-            <span className="text-[#D4AF37]">
-              Businesses Grow
-            </span>
-          </motion.h1>
+  <span className="text-[#D4AF37]">
+    Businesses Grow
+  </span>
+</h1>
 
           <motion.p
             initial={{ opacity: 0, y: 35 }}
