@@ -1,7 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "./Reveal";
-import { FaExternalLinkAlt, FaCheckCircle } from "react-icons/fa";
+
+import {
+  FaExternalLinkAlt,
+  FaCheckCircle,
+  FaArrowRight,
+} from "react-icons/fa";
 
 const projects = [
   {
@@ -18,106 +23,269 @@ const projects = [
     ],
     live: "https://na-kirraak-adda.vercel.app",
   },
+
+  {
+    title: "SwaSra Collections",
+    category: "Saree Showcase Website",
+    description:
+      "A modern and responsive saree showcase website featuring product collections, category filters, search, colour variants and direct WhatsApp ordering for a seamless shopping experience.",
+    image: "/projects/swasra-collections.png",
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Vercel",
+    ],
+    live: "https://swa-sra-collections.vercel.app",
+  },
 ];
 
 export default function Projects() {
   return (
     <Reveal>
+
       <section
         id="projects"
-        className="relative overflow-hidden bg-[#050505] pt-1 pb-16 text-white"
+        className="
+          relative
+          overflow-hidden
+          bg-[#050505]
+          pb-16
+          pt-1
+          text-white
+        "
       >
-        {/* Background Glow */}
 
-        <div className="absolute inset-0 overflow-hidden">
+        {/* ================= BACKGROUND ================= */}
 
-          <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
-          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-3xl" />
+          <div
+            className="
+              absolute
+              -left-40
+              top-20
+              h-80
+              w-80
+              rounded-full
+              bg-[#D4AF37]/8
+              blur-[120px]
+            "
+          />
+
+          <div
+            className="
+              absolute
+              -right-40
+              bottom-0
+              h-80
+              w-80
+              rounded-full
+              bg-[#D4AF37]/8
+              blur-[120px]
+            "
+          />
+
+          {/* Top Accent */}
+
+          <div
+            className="
+              absolute
+              left-1/2
+              top-0
+              h-px
+              w-2/3
+              -translate-x-1/2
+              bg-gradient-to-r
+              from-transparent
+              via-[#D4AF37]/20
+              to-transparent
+            "
+          />
 
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* ================= CONTENT ================= */}
 
-          {/* Heading */}
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
 
-          <div className="text-center">
+          {/* ================= HEADING ================= */}
 
-            <span className="inline-block rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.35em] text-[#D4AF37]">
-              PORTFOLIO
+          <div className="mx-auto max-w-3xl text-center">
+
+            <span
+              className="
+                inline-flex
+                items-center
+                gap-3
+                rounded-full
+                border
+                border-[#D4AF37]/25
+                bg-[#D4AF37]/8
+                px-5
+                py-2
+                text-xs
+                font-semibold
+                uppercase
+                tracking-[0.3em]
+                text-[#D4AF37]
+                sm:text-sm
+              "
+            >
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+
+              Portfolio
+
             </span>
 
-            <h2 className="mt-8 text-5xl md:text-6xl font-black leading-tight">
+            <h2
+              className="
+                mt-7
+                text-4xl
+                font-black
+                leading-tight
+                tracking-tight
+                sm:text-5xl
+                md:text-6xl
+              "
+            >
               Featured
-              <span className="block text-[#D4AF37]">
-                Client Project
+
+              <span
+                className="
+                  block
+                  bg-gradient-to-r
+                  from-[#D4AF37]
+                  via-[#F3DA7A]
+                  to-[#D4AF37]
+                  bg-clip-text
+                  text-transparent
+                "
+              >
+                Client Projects
               </span>
+
             </h2>
 
-            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-400">
-              Every project is carefully designed with performance,
-              premium aesthetics and user experience in mind to help
-              businesses grow online.
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-base
+                leading-8
+                text-gray-400
+                sm:text-lg
+              "
+            >
+              Explore some of our recently delivered websites, crafted with
+              modern design, responsive experiences and business-focused
+              functionality.
             </p>
 
           </div>
 
-          {/* Project Card */}
+          {/* ================= PROJECT GRID ================= */}
 
-          <div className="mt-20">
+          <div
+            className="
+              mt-14
+              grid
+              grid-cols-1
+              gap-6
+              sm:mt-16
+              lg:mt-20
+              lg:grid-cols-2
+              lg:gap-8
+            "
+          >
 
             {projects.map((project) => (
 
-              <div
+              <article
                 key={project.title}
                 className="
-                group
-                overflow-hidden
-                rounded-3xl
-                border
-                border-[#D4AF37]/20
-                bg-[#111111]
-                transition-all
-                duration-500
-                hover:border-[#D4AF37]
-                hover:shadow-[0_20px_60px_rgba(212,175,55,0.25)]
+                  group
+                  relative
+                  flex
+                  flex-col
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-white/[0.08]
+                  bg-[#0C0C0C]
+                  transition-all
+                  duration-300
+                  hover:-translate-y-2
+                  hover:border-[#D4AF37]/50
+                  hover:shadow-[0_20px_50px_rgba(212,175,55,0.10)]
                 "
               >
 
-                {/* Image */}
+                {/* ================= IMAGE ================= */}
 
-                <div className="relative h-96 overflow-hidden">
+                <div
+                  className="
+                    relative
+                    h-56
+                    overflow-hidden
+                    bg-[#111111]
+                    sm:h-72
+                    md:h-80
+                  "
+                >
 
                   <Image
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} website project`}
                     fill
+                    sizes="
+                      (max-width: 1024px) 100vw,
+                      50vw
+                    "
                     className="
-                    object-cover
-                    transition-transform
-                    duration-700
-                    group-hover:scale-110
+                      object-cover
+                      transition-transform
+                      duration-500
+                      ease-out
+                      group-hover:scale-[1.035]
                     "
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                  {/* Image Gradient */}
+
+                  <div
+                    className="
+                      pointer-events-none
+                      absolute
+                      inset-0
+                      bg-gradient-to-t
+                      from-[#0C0C0C]
+                      via-transparent
+                      to-black/10
+                    "
+                  />
 
                   {/* Category */}
 
-                  <div className="absolute top-6 left-6">
+                  <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
 
                     <span
                       className="
-                      rounded-full
-                      border
-                      border-[#D4AF37]
-                      bg-black/70
-                      px-5
-                      py-2
-                      text-sm
-                      font-semibold
-                      text-[#D4AF37]
-                      backdrop-blur-md
+                        inline-flex
+                        items-center
+                        rounded-full
+                        border
+                        border-[#D4AF37]/40
+                        bg-[#090909]/90
+                        px-4
+                        py-2
+                        text-xs
+                        font-semibold
+                        text-[#D4AF37]
+                        sm:px-5
+                        sm:text-sm
                       "
                     >
                       {project.category}
@@ -125,50 +293,176 @@ export default function Projects() {
 
                   </div>
 
-                </div>
+                  {/* Live Project Badge */}
 
-                {/* Content */}
+                  <div className="absolute right-4 top-4 sm:right-6 sm:top-6">
 
-                <div className="p-10">
+                    <span
+                      className="
+                        inline-flex
+                        items-center
+                        gap-2
+                        rounded-full
+                        border
+                        border-white/10
+                        bg-[#090909]/90
+                        px-3
+                        py-2
+                        text-[10px]
+                        font-semibold
+                        uppercase
+                        tracking-[0.12em]
+                        text-gray-300
+                        sm:px-4
+                      "
+                    >
 
-                  <h3 className="text-4xl font-bold">
-                    {project.title}
-                  </h3>
+                      <span
+                        className="
+                          h-1.5
+                          w-1.5
+                          rounded-full
+                          bg-green-400
+                        "
+                      />
 
-                  <p className="mt-6 max-w-4xl leading-8 text-gray-400">
-                    {project.description}
-                  </p>
+                      Live
 
-                  {/* Delivered Badge */}
-
-                  <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-green-500/30 bg-green-500/10 px-5 py-3">
-
-                    <FaCheckCircle className="text-green-400" />
-
-                    <span className="font-semibold text-green-300">
-                      Successfully Delivered Client Project
                     </span>
 
                   </div>
 
+                  {/* Gold Bottom Highlight */}
+
+                  <div
+                    className="
+                      absolute
+                      bottom-0
+                      left-1/2
+                      h-px
+                      w-0
+                      -translate-x-1/2
+                      bg-gradient-to-r
+                      from-transparent
+                      via-[#D4AF37]
+                      to-transparent
+                      transition-all
+                      duration-500
+                      group-hover:w-3/4
+                    "
+                  />
+
+                </div>
+
+                {/* ================= PROJECT CONTENT ================= */}
+
+                <div
+                  className="
+                    flex
+                    flex-1
+                    flex-col
+                    p-6
+                    sm:p-8
+                  "
+                >
+
+                  {/* Delivered */}
+
+                  <div
+                    className="
+                      flex
+                      items-center
+                      gap-2
+                      text-sm
+                      font-medium
+                      text-green-400
+                    "
+                  >
+
+                    <FaCheckCircle />
+
+                    Project Successfully Delivered
+
+                  </div>
+
+                  {/* Title */}
+
+                  <h3
+                    className="
+                      mt-5
+                      text-3xl
+                      font-bold
+                      tracking-tight
+                      text-white
+                      transition-colors
+                      duration-300
+                      group-hover:text-[#D4AF37]
+                    "
+                  >
+                    {project.title}
+                  </h3>
+
+                  {/* Description */}
+
+                  <p
+                    className="
+                      mt-4
+                      leading-7
+                      text-gray-400
+                    "
+                  >
+                    {project.description}
+                  </p>
+
+                  {/* Divider */}
+
+                  <div
+                    className="
+                      my-6
+                      h-px
+                      bg-gradient-to-r
+                      from-[#D4AF37]/20
+                      via-white/[0.05]
+                      to-transparent
+                    "
+                  />
+
+                  {/* Tech Label */}
+
+                  <p
+                    className="
+                      text-[10px]
+                      font-semibold
+                      uppercase
+                      tracking-[0.2em]
+                      text-gray-600
+                    "
+                  >
+                    Technologies Used
+                  </p>
+
                   {/* Tech Stack */}
 
-                  <div className="mt-8 flex flex-wrap gap-4">
+                  <div className="mt-3 flex flex-wrap gap-2">
 
                     {project.technologies.map((tech) => (
 
                       <span
                         key={tech}
                         className="
-                        rounded-full
-                        border
-                        border-[#D4AF37]/30
-                        bg-[#D4AF37]/10
-                        px-5
-                        py-2
-                        text-sm
-                        font-medium
-                        text-[#D4AF37]
+                          rounded-full
+                          border
+                          border-[#D4AF37]/20
+                          bg-[#D4AF37]/[0.06]
+                          px-3.5
+                          py-1.5
+                          text-xs
+                          font-medium
+                          text-[#D4AF37]
+                          transition-colors
+                          duration-300
+                          hover:border-[#D4AF37]/50
+                          hover:bg-[#D4AF37]/10
                         "
                       >
                         {tech}
@@ -178,33 +472,69 @@ export default function Projects() {
 
                   </div>
 
-                  {/* Button */}
+                  {/* ================= CTA ================= */}
 
-                  <div className="mt-10">
+                  <div className="mt-auto pt-8">
 
                     <Link
                       href={project.live}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="
-                      inline-flex
-                      items-center
-                      gap-3
-                      rounded-xl
-                      bg-[#D4AF37]
-                      px-8
-                      py-4
-                      font-semibold
-                      text-black
-                      transition-all
-                      duration-300
-                      hover:scale-105
-                      hover:bg-[#E5C158]
-                      hover:shadow-[0_10px_35px_rgba(212,175,55,0.45)]
+                        group/button
+                        relative
+                        flex
+                        w-full
+                        items-center
+                        justify-center
+                        gap-3
+                        overflow-hidden
+                        rounded-xl
+                        bg-[#D4AF37]
+                        px-6
+                        py-4
+                        font-semibold
+                        text-black
+                        transition-all
+                        duration-300
+                        hover:bg-[#E5C158]
+                        hover:shadow-[0_10px_30px_rgba(212,175,55,0.20)]
+                        sm:w-fit
                       "
                     >
-                      <FaExternalLinkAlt />
 
-                      Visit Live Website
+                      {/* Button Shine */}
+
+                      <span
+                        className="
+                          absolute
+                          inset-y-0
+                          -left-16
+                          w-10
+                          -skew-x-12
+                          bg-white/30
+                          transition-all
+                          duration-700
+                          group-hover/button:left-[120%]
+                        "
+                      />
+
+                      <FaExternalLinkAlt className="relative z-10 text-sm" />
+
+                      <span className="relative z-10">
+                        Visit Live Website
+                      </span>
+
+                      <FaArrowRight
+                        className="
+                          relative
+                          z-10
+                          text-xs
+                          transition-transform
+                          duration-300
+                          group-hover/button:translate-x-1
+                        "
+                      />
 
                     </Link>
 
@@ -212,14 +542,55 @@ export default function Projects() {
 
                 </div>
 
-              </div>
+              </article>
 
             ))}
 
           </div>
 
+          {/* ================= BOTTOM MESSAGE ================= */}
+
+          <div className="mt-14 text-center sm:mt-16">
+
+            <p className="text-sm text-gray-500 sm:text-base">
+              Your business could be our next featured project.
+            </p>
+
+            <a
+              href="#contact"
+              className="
+                group
+                mt-4
+                inline-flex
+                items-center
+                gap-3
+                font-semibold
+                text-[#D4AF37]
+                transition-colors
+                duration-300
+                hover:text-[#F3DA7A]
+              "
+            >
+
+              Start your project with us
+
+              <FaArrowRight
+                className="
+                  text-sm
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              />
+
+            </a>
+
+          </div>
+
         </div>
+
       </section>
+
     </Reveal>
   );
 }

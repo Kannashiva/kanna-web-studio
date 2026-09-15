@@ -1,146 +1,457 @@
+"use client";
+
+import { useState } from "react";
 import Reveal from "./Reveal";
-import { FaQuestionCircle } from "react-icons/fa";
+
+import {
+  FaPlus,
+  FaArrowRight,
+} from "react-icons/fa";
 
 const faqs = [
   {
     question: "How long does it take to build a website?",
     answer:
-      "A typical business website takes around 2–4 weeks depending on the number of pages and custom features required.",
+      "The timeline depends on the size and requirements of the project. A standard business website can usually be completed within 1–3 weeks once the required content and details are available.",
   },
+
   {
     question: "Do you provide domain and hosting?",
     answer:
-      "Yes. I can help you purchase the right domain, choose reliable hosting, and complete the entire setup process.",
+      "Yes. We can guide you in choosing and purchasing a suitable domain and hosting solution, and we can also help with the complete setup and deployment process.",
   },
+
   {
-    question: "Will my website work on mobile devices?",
+    question: "Will my website work properly on mobile devices?",
     answer:
-      "Absolutely! Every website is fully responsive and optimized for mobile, tablet, laptop, and desktop devices.",
+      "Yes. Every website we build is designed to be responsive across mobile phones, tablets, laptops and desktop screens.",
   },
+
   {
     question: "Can I update my website in the future?",
     answer:
-      "Yes. You can request updates anytime, and I also offer website maintenance plans for ongoing support.",
+      "Yes. Your website can be updated whenever required. We can also provide ongoing maintenance and support for content changes, improvements and technical updates.",
   },
+
   {
-    question: "Do you provide SEO services?",
+    question: "Is SEO included with the website?",
     answer:
-      "Yes. Every website is built with SEO best practices, fast loading speed, clean code, and optimized structure.",
+      "Basic SEO setup is included with our standard websites. Depending on the selected package and requirements, additional SEO optimization can also be included.",
+  },
+
+  {
+    question: "How much does a website cost?",
+    answer:
+      "Our Starter Website package begins at ₹4,999 and Business Website packages begin at ₹9,999. Final pricing depends on the number of pages, functionality, design requirements and integrations.",
+  },
+
+  {
+    question: "How does the payment process work?",
+    answer:
+      "Payment terms are discussed before the project begins and depend on the project scope. The complete pricing, deliverables and payment schedule will be confirmed before development starts.",
   },
 ];
 
 export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <Reveal>
+
       <section
         id="faq"
-        className="relative overflow-hidden bg-[#050505] pt-1 pb-16 text-white"
+        className="
+          relative
+          overflow-hidden
+          bg-[#050505]
+          pb-16
+          pt-1
+          text-white
+        "
       >
-        {/* Background Glow */}
 
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-[150px]" />
-          <div className="absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-[150px]" />
+        {/* ================= BACKGROUND ================= */}
+
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+
+          <div
+            className="
+              absolute
+              -left-40
+              top-20
+              h-80
+              w-80
+              rounded-full
+              bg-[#D4AF37]/8
+              blur-[120px]
+            "
+          />
+
+          <div
+            className="
+              absolute
+              -right-40
+              bottom-0
+              h-80
+              w-80
+              rounded-full
+              bg-[#D4AF37]/8
+              blur-[120px]
+            "
+          />
+
+          {/* Top Accent */}
+
+          <div
+            className="
+              absolute
+              left-1/2
+              top-0
+              h-px
+              w-2/3
+              -translate-x-1/2
+              bg-gradient-to-r
+              from-transparent
+              via-[#D4AF37]/20
+              to-transparent
+            "
+          />
+
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6">
+        {/* ================= CONTENT ================= */}
 
-          {/* Heading */}
+        <div className="relative z-10 mx-auto max-w-5xl px-6">
 
-          <div className="text-center">
+          {/* ================= HEADING ================= */}
 
-            <p className="uppercase tracking-[0.4em] text-[#D4AF37] font-semibold">
+          <div className="mx-auto max-w-3xl text-center">
+
+            <span
+              className="
+                inline-flex
+                items-center
+                gap-3
+                rounded-full
+                border
+                border-[#D4AF37]/25
+                bg-[#D4AF37]/8
+                px-5
+                py-2
+                text-xs
+                font-semibold
+                uppercase
+                tracking-[0.3em]
+                text-[#D4AF37]
+                sm:text-sm
+              "
+            >
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+
               FAQ
-            </p>
 
-            <h2 className="mt-5 text-5xl md:text-6xl font-black">
+            </span>
+
+            <h2
+              className="
+                mt-7
+                text-4xl
+                font-black
+                leading-tight
+                tracking-tight
+                sm:text-5xl
+                md:text-6xl
+              "
+            >
               Frequently Asked
-              <span className="block text-[#D4AF37]">
+
+              <span
+                className="
+                  block
+                  bg-gradient-to-r
+                  from-[#D4AF37]
+                  via-[#F3DA7A]
+                  to-[#D4AF37]
+                  bg-clip-text
+                  text-transparent
+                "
+              >
                 Questions
               </span>
+
             </h2>
 
-            <p className="mt-6 text-lg leading-8 text-gray-400 max-w-3xl mx-auto">
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-base
+                leading-8
+                text-gray-400
+                sm:text-lg
+              "
+            >
               Everything you need to know before starting your website project
               with Kanna Web Studio.
             </p>
 
           </div>
 
-          {/* FAQ Cards */}
+          {/* ================= FAQ ACCORDION ================= */}
 
-          <div className="mt-16 space-y-8">
+          <div className="mt-14 space-y-3 sm:mt-16 sm:space-y-4">
 
-            {faqs.map((faq, index) => (
+            {faqs.map((faq, index) => {
 
-              <div
-                key={index}
-                className="
-                group
-                rounded-3xl
-                border
-                border-[#D4AF37]/20
-                bg-white/[0.03]
-                backdrop-blur-xl
-                p-8
-                transition-all
-                duration-500
-                hover:-translate-y-2
-                hover:border-[#D4AF37]
-                hover:shadow-[0_20px_50px_rgba(212,175,55,0.15)]
-                "
-              >
+              const isOpen = openIndex === index;
 
-                <div className="flex items-start gap-5">
+              return (
 
-                  {/* Icon */}
-
-                  <div
-                    className="
-                    flex
-                    h-14
-                    w-14
-                    shrink-0
-                    items-center
-                    justify-center
+                <div
+                  key={faq.question}
+                  className={`
+                    group
+                    relative
+                    overflow-hidden
                     rounded-2xl
-                    bg-[#D4AF37]
-                    text-black
-                    text-2xl
-                    shadow-lg
+                    border
                     transition-all
                     duration-300
-                    group-hover:rotate-6
-                    group-hover:scale-110
+                    sm:rounded-3xl
+                    ${
+                      isOpen
+                        ? "border-[#D4AF37]/45 bg-[#10100E]"
+                        : "border-white/[0.07] bg-[#0C0C0C] hover:border-[#D4AF37]/30"
+                    }
+                  `}
+                >
+
+                  {/* Active Top Line */}
+
+                  <div
+                    className={`
+                      absolute
+                      left-1/2
+                      top-0
+                      h-px
+                      -translate-x-1/2
+                      bg-gradient-to-r
+                      from-transparent
+                      via-[#D4AF37]
+                      to-transparent
+                      transition-all
+                      duration-500
+                      ${
+                        isOpen
+                          ? "w-2/3"
+                          : "w-0"
+                      }
+                    `}
+                  />
+
+                  {/* ================= QUESTION ================= */}
+
+                  <button
+                    type="button"
+                    onClick={() => toggleFAQ(index)}
+                    aria-expanded={isOpen}
+                    className="
+                      flex
+                      w-full
+                      items-center
+                      justify-between
+                      gap-5
+                      px-5
+                      py-5
+                      text-left
+                      sm:px-7
+                      sm:py-6
                     "
                   >
-                    <FaQuestionCircle />
-                  </div>
 
-                  <div>
+                    {/* Question Side */}
 
-                    <h3 className="text-2xl font-bold text-white">
-                      {faq.question}
-                    </h3>
+                    <div className="flex items-center gap-4">
 
-                    <div className="my-5 h-px w-24 bg-[#D4AF37]/40"></div>
+                      {/* Question Number */}
 
-                    <p className="leading-8 text-gray-400">
-                      {faq.answer}
-                    </p>
+                      <span
+                        className={`
+                          hidden
+                          text-xs
+                          font-bold
+                          tracking-[0.15em]
+                          transition-colors
+                          duration-300
+                          sm:block
+                          ${
+                            isOpen
+                              ? "text-[#D4AF37]"
+                              : "text-gray-700"
+                          }
+                        `}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      {/* Question */}
+
+                      <h3
+                        className={`
+                          text-base
+                          font-semibold
+                          leading-6
+                          transition-colors
+                          duration-300
+                          sm:text-lg
+                          ${
+                            isOpen
+                              ? "text-[#D4AF37]"
+                              : "text-white group-hover:text-[#D4AF37]"
+                          }
+                        `}
+                      >
+                        {faq.question}
+                      </h3>
+
+                    </div>
+
+                    {/* Plus Button */}
+
+                    <span
+                      className={`
+                        flex
+                        h-9
+                        w-9
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        border
+                        text-sm
+                        transition-all
+                        duration-300
+                        ${
+                          isOpen
+                            ? "rotate-45 border-[#D4AF37] bg-[#D4AF37] text-black"
+                            : "border-white/10 bg-white/[0.03] text-[#D4AF37]"
+                        }
+                      `}
+                    >
+                      <FaPlus />
+                    </span>
+
+                  </button>
+
+                  {/* ================= ANSWER ================= */}
+
+                  <div
+                    className={`
+                      grid
+                      transition-[grid-template-rows]
+                      duration-300
+                      ease-out
+                      ${
+                        isOpen
+                          ? "grid-rows-[1fr]"
+                          : "grid-rows-[0fr]"
+                      }
+                    `}
+                  >
+
+                    <div className="overflow-hidden">
+
+                      <div
+                        className="
+                          border-t
+                          border-white/[0.05]
+                          px-5
+                          pb-6
+                          pt-5
+                          sm:ml-14
+                          sm:px-7
+                        "
+                      >
+                        <p
+                          className="
+                            max-w-3xl
+                            text-sm
+                            leading-7
+                            text-gray-400
+                            sm:text-base
+                            sm:leading-8
+                          "
+                        >
+                          {faq.answer}
+                        </p>
+                      </div>
+
+                    </div>
 
                   </div>
 
                 </div>
 
-              </div>
+              );
 
-            ))}
+            })}
+
+          </div>
+
+          {/* ================= BOTTOM CTA ================= */}
+
+          <div
+            className="
+              mt-12
+              text-center
+              sm:mt-14
+            "
+          >
+
+            <p className="text-sm text-gray-500 sm:text-base">
+              Still have a question about your website?
+            </p>
+
+            <a
+              href="#contact"
+              className="
+                group
+                mt-4
+                inline-flex
+                items-center
+                gap-3
+                font-semibold
+                text-[#D4AF37]
+                transition-colors
+                duration-300
+                hover:text-[#F3DA7A]
+              "
+            >
+              Talk to us
+
+              <FaArrowRight
+                className="
+                  text-sm
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              />
+
+            </a>
 
           </div>
 
         </div>
+
       </section>
+
     </Reveal>
   );
 }

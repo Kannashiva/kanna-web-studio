@@ -1,9 +1,12 @@
 import Reveal from "./Reveal";
+
 import {
   FaSearch,
   FaPencilRuler,
   FaCode,
   FaRocket,
+  FaArrowRight,
+  FaCheck,
 } from "react-icons/fa";
 
 const steps = [
@@ -11,161 +14,444 @@ const steps = [
     icon: <FaSearch />,
     title: "Consultation",
     description:
-      "We discuss your business, goals and target audience to understand exactly what your website needs.",
+      "We understand your business, goals, audience and website requirements before starting the project.",
+    highlights: ["Business Goals", "Requirements"],
   },
   {
     icon: <FaPencilRuler />,
     title: "Planning & Design",
     description:
-      "A modern, user-friendly design is created to reflect your brand and provide the best user experience.",
+      "We plan the website structure and create a modern design that reflects your brand and user experience.",
+    highlights: ["Page Structure", "UI Design"],
   },
   {
     icon: <FaCode />,
     title: "Development",
     description:
-      "Your website is built using the latest technologies with responsive design, speed and SEO best practices.",
+      "We turn the approved design into a responsive, fast and SEO-friendly website using modern technologies.",
+    highlights: ["Development", "Optimization"],
   },
   {
     icon: <FaRocket />,
     title: "Launch & Support",
     description:
-      "After testing and optimization, your website goes live with continuous support whenever you need it.",
+      "After final testing and approval, we deploy your website and provide support to keep everything running smoothly.",
+    highlights: ["Final Testing", "Deployment"],
   },
 ];
 
 export default function Process() {
   return (
     <Reveal>
+
       <section
         id="process"
-        className="relative overflow-hidden bg-[#050505] pt-1 pb-16 text-white"
+        className="
+          relative
+          overflow-hidden
+          bg-[#050505]
+          pb-16
+          pt-1
+          text-white
+        "
       >
-        {/* Background Glow */}
 
-        <div className="absolute inset-0 overflow-hidden">
+        {/* ================= BACKGROUND ================= */}
 
-          <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
-          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[#D4AF37]/10 blur-3xl" />
+          <div
+            className="
+              absolute
+              -left-40
+              top-20
+              h-80
+              w-80
+              rounded-full
+              bg-[#D4AF37]/8
+              blur-[120px]
+            "
+          />
+
+          <div
+            className="
+              absolute
+              -right-40
+              bottom-0
+              h-80
+              w-80
+              rounded-full
+              bg-[#D4AF37]/8
+              blur-[120px]
+            "
+          />
+
+          {/* Top Accent */}
+
+          <div
+            className="
+              absolute
+              left-1/2
+              top-0
+              h-px
+              w-2/3
+              -translate-x-1/2
+              bg-gradient-to-r
+              from-transparent
+              via-[#D4AF37]/20
+              to-transparent
+            "
+          />
 
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* ================= CONTENT ================= */}
 
-          {/* Heading */}
+        <div className="relative z-10 mx-auto max-w-7xl px-6">
 
-          <div className="text-center">
+          {/* ================= HEADING ================= */}
 
-            <span className="inline-block rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.35em] text-[#D4AF37]">
-              OUR PROCESS
+          <div className="mx-auto max-w-3xl text-center">
+
+            <span
+              className="
+                inline-flex
+                items-center
+                gap-3
+                rounded-full
+                border
+                border-[#D4AF37]/25
+                bg-[#D4AF37]/8
+                px-5
+                py-2
+                text-xs
+                font-semibold
+                uppercase
+                tracking-[0.3em]
+                text-[#D4AF37]
+                sm:text-sm
+              "
+            >
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+
+              Our Process
+
             </span>
 
-            <h2 className="mt-8 text-5xl md:text-6xl font-black leading-tight">
-              From Idea
-              <span className="block text-[#D4AF37]">
-                To Launch
+            <h2
+              className="
+                mt-7
+                text-4xl
+                font-black
+                leading-tight
+                tracking-tight
+                sm:text-5xl
+                md:text-6xl
+              "
+            >
+              From Your Idea
+
+              <span
+                className="
+                  block
+                  bg-gradient-to-r
+                  from-[#D4AF37]
+                  via-[#F3DA7A]
+                  to-[#D4AF37]
+                  bg-clip-text
+                  text-transparent
+                "
+              >
+                To Your Website
               </span>
+
             </h2>
 
-            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-gray-400">
-              Building a professional website should be simple and transparent.
-              Here's how we transform your idea into a high-performing digital
-              experience.
+            <p
+              className="
+                mx-auto
+                mt-6
+                max-w-3xl
+                text-base
+                leading-8
+                text-gray-400
+                sm:text-lg
+              "
+            >
+              A simple and transparent process that takes your business from
+              the first conversation to a professionally launched website.
             </p>
 
           </div>
 
-          {/* Steps */}
+          {/* ================= PROCESS ================= */}
 
-          <div className="relative mt-24 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div
+            className="
+              relative
+              mt-14
+              grid
+              gap-5
+              sm:mt-16
+              md:grid-cols-2
+              md:gap-6
+              lg:mt-20
+              lg:grid-cols-4
+            "
+          >
+
+            {/* Desktop Connecting Line */}
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                left-[10%]
+                right-[10%]
+                top-10
+                hidden
+                h-px
+                bg-gradient-to-r
+                from-transparent
+                via-[#D4AF37]/30
+                to-transparent
+                lg:block
+              "
+            />
 
             {steps.map((step, index) => (
 
               <div
                 key={step.title}
                 className="
-                relative
-                group
-                overflow-hidden
-                rounded-3xl
-                border
-                border-[#D4AF37]/20
-                bg-[#111111]
-                p-8
-                transition-all
-                duration-500
-                hover:-translate-y-3
-                hover:border-[#D4AF37]
-                hover:shadow-[0_20px_60px_rgba(212,175,55,0.25)]
+                  group
+                  relative
+                  flex
+                  flex-col
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-white/[0.07]
+                  bg-[#0C0C0C]
+                  p-6
+                  transition-all
+                  duration-300
+                  hover:-translate-y-2
+                  hover:border-[#D4AF37]/50
+                  hover:bg-[#10100E]
+                  hover:shadow-[0_18px_45px_rgba(212,175,55,0.10)]
+                  sm:p-8
+                  lg:p-7
                 "
               >
 
-                {/* Number */}
+                {/* Top Gold Highlight */}
 
                 <div
                   className="
-                  absolute
-                  right-6
-                  top-6
-                  text-6xl
-                  font-black
-                  text-[#D4AF37]/10
-                  transition
-                  duration-300
-                  group-hover:text-[#D4AF37]/20
+                    absolute
+                    left-1/2
+                    top-0
+                    h-px
+                    w-0
+                    -translate-x-1/2
+                    bg-gradient-to-r
+                    from-transparent
+                    via-[#D4AF37]
+                    to-transparent
+                    transition-all
+                    duration-500
+                    group-hover:w-2/3
                   "
-                >
-                  0{index + 1}
+                />
+
+                {/* ================= STEP HEADER ================= */}
+
+                <div className="relative flex items-center justify-between">
+
+                  {/* Icon */}
+
+                  <div
+                    className="
+                      relative
+                      z-10
+                      flex
+                      h-16
+                      w-16
+                      items-center
+                      justify-center
+                      rounded-2xl
+                      border
+                      border-[#D4AF37]/25
+                      bg-[#D4AF37]/10
+                      text-2xl
+                      text-[#D4AF37]
+                      transition-all
+                      duration-300
+                      group-hover:scale-105
+                      group-hover:border-[#D4AF37]/60
+                      group-hover:bg-[#D4AF37]
+                      group-hover:text-black
+                    "
+                  >
+                    {step.icon}
+                  </div>
+
+                  {/* Step Number */}
+
+                  <div
+                    className="
+                      relative
+                      z-10
+                      flex
+                      h-9
+                      items-center
+                      rounded-full
+                      border
+                      border-[#D4AF37]/20
+                      bg-[#D4AF37]/[0.06]
+                      px-3
+                      text-[10px]
+                      font-bold
+                      uppercase
+                      tracking-[0.16em]
+                      text-[#D4AF37]
+                    "
+                  >
+                    Step {String(index + 1).padStart(2, "0")}
+                  </div>
+
                 </div>
 
-                {/* Icon */}
+                {/* ================= TITLE ================= */}
 
-                <div
+                <h3
                   className="
-                  flex
-                  h-20
-                  w-20
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  border
-                  border-[#D4AF37]/20
-                  bg-[#D4AF37]/10
-                  text-3xl
-                  text-[#D4AF37]
-                  transition-all
-                  duration-300
-                  group-hover:scale-110
-                  group-hover:rotate-6
-                  group-hover:bg-[#D4AF37]
-                  group-hover:text-black
+                    relative
+                    mt-7
+                    text-2xl
+                    font-bold
+                    text-white
+                    transition-colors
+                    duration-300
+                    group-hover:text-[#D4AF37]
                   "
                 >
-                  {step.icon}
-                </div>
-
-                <h3 className="mt-8 text-2xl font-bold">
                   {step.title}
                 </h3>
 
-                <p className="mt-5 leading-8 text-gray-400">
+                {/* ================= DESCRIPTION ================= */}
+
+                <p
+                  className="
+                    relative
+                    mt-4
+                    leading-7
+                    text-gray-400
+                  "
+                >
                   {step.description}
                 </p>
 
-                {/* Bottom Line */}
+                {/* Divider */}
 
                 <div
                   className="
-                  mt-8
-                  h-1
-                  w-16
-                  rounded-full
-                  bg-[#D4AF37]
-                  transition-all
-                  duration-500
-                  group-hover:w-full
+                    my-6
+                    h-px
+                    bg-gradient-to-r
+                    from-[#D4AF37]/20
+                    via-white/[0.05]
+                    to-transparent
                   "
                 />
+
+                {/* ================= HIGHLIGHTS ================= */}
+
+                <div className="mt-auto space-y-3">
+
+                  {step.highlights.map((highlight) => (
+
+                    <div
+                      key={highlight}
+                      className="
+                        flex
+                        items-center
+                        gap-3
+                        text-sm
+                        text-gray-300
+                      "
+                    >
+
+                      <span
+                        className="
+                          flex
+                          h-5
+                          w-5
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-full
+                          bg-[#D4AF37]/10
+                          text-[8px]
+                          text-[#D4AF37]
+                        "
+                      >
+                        <FaCheck />
+                      </span>
+
+                      {highlight}
+
+                    </div>
+
+                  ))}
+
+                </div>
+
+                {/* ================= BOTTOM STEP LINE ================= */}
+
+                <div className="mt-7 flex items-center gap-3">
+
+                  <div
+                    className="
+                      h-px
+                      flex-1
+                      bg-[#D4AF37]/15
+                      transition-colors
+                      duration-300
+                      group-hover:bg-[#D4AF37]/40
+                    "
+                  />
+
+                  {index < steps.length - 1 ? (
+
+                    <FaArrowRight
+                      className="
+                        text-xs
+                        text-[#D4AF37]/40
+                        transition-all
+                        duration-300
+                        group-hover:translate-x-1
+                        group-hover:text-[#D4AF37]
+                      "
+                    />
+
+                  ) : (
+
+                    <FaRocket
+                      className="
+                        text-xs
+                        text-[#D4AF37]/40
+                        transition-colors
+                        duration-300
+                        group-hover:text-[#D4AF37]
+                      "
+                    />
+
+                  )}
+
+                </div>
 
               </div>
 
@@ -173,40 +459,77 @@ export default function Process() {
 
           </div>
 
-          {/* Bottom CTA */}
+          {/* ================= CTA ================= */}
 
-          <div className="mt-20 text-center">
+          <div className="mt-14 text-center sm:mt-16">
 
-            <p className="text-lg text-gray-400">
-              Ready to turn your business into a powerful online brand?
+            <p className="text-sm text-gray-400 sm:text-base">
+              Have an idea for your business?
             </p>
 
             <a
               href="#contact"
               className="
-              mt-8
-              inline-flex
-              items-center
-              rounded-xl
-              bg-[#D4AF37]
-              px-8
-              py-4
-              font-semibold
-              text-black
-              transition-all
-              duration-300
-              hover:scale-105
-              hover:bg-[#E5C158]
-              hover:shadow-[0_10px_35px_rgba(212,175,55,0.45)]
+                group
+                relative
+                mt-5
+                inline-flex
+                items-center
+                justify-center
+                gap-3
+                overflow-hidden
+                rounded-xl
+                bg-[#D4AF37]
+                px-7
+                py-4
+                font-semibold
+                text-black
+                transition-all
+                duration-300
+                hover:bg-[#E5C158]
+                hover:shadow-[0_10px_30px_rgba(212,175,55,0.20)]
               "
             >
-              Start Your Project
+
+              {/* Shine */}
+
+              <span
+                className="
+                  absolute
+                  inset-y-0
+                  -left-16
+                  w-10
+                  -skew-x-12
+                  bg-white/30
+                  transition-all
+                  duration-700
+                  group-hover:left-[120%]
+                "
+              />
+
+              <span className="relative z-10">
+                Start Your Project
+              </span>
+
+              <FaArrowRight
+                className="
+                  relative
+                  z-10
+                  text-sm
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              />
+
             </a>
 
           </div>
 
         </div>
+
       </section>
+
     </Reveal>
   );
 }
