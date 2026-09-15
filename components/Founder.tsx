@@ -211,7 +211,7 @@ export default function Founder() {
                 >
 
                   <Image
-                    src="/Founder/Founder.jpeg"
+                    src="/founder/founder.jpeg"
                     alt="Shiva, Founder of Kanna Web Studio"
                     fill
                     sizes="
