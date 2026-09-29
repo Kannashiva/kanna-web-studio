@@ -1,26 +1,298 @@
 @import "tailwindcss";
 
+/* =========================================================
+   KANNA WEB STUDIO V2
+   Editorial Design System
+========================================================= */
+
 :root {
-  --background: #ffffff;
+  /* LIGHT MODE */
+  --background: #f3f0e9;
+  --background-alt: #e9e4db;
+  --surface: #ebe7df;
+
   --foreground: #171717;
+  --muted: #706e69;
+
+  --accent: #ff6b22;
+  --accent-dark: #e85b14;
+
+  --border: rgba(23, 23, 23, 0.14);
+
+  color-scheme: light;
 }
+
+html.dark {
+  /* DARK MODE */
+  --background: #111111;
+  --background-alt: #181818;
+  --surface: #1d1d1d;
+
+  --foreground: #f3f0e9;
+  --muted: #a6a19a;
+
+  --accent: #ff6b22;
+  --accent-dark: #e85b14;
+
+  --border: rgba(243, 240, 233, 0.14);
+
+  color-scheme: dark;
+}
+
+/* =========================================================
+   TAILWIND THEME
+========================================================= */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================================================
+   BASE
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
+  overflow-x: hidden;
+
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+html,
+body {
+  transition:
+    background-color 250ms ease,
+    color 250ms ease;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.site-container {
+  width: 100%;
+  max-width: 1480px;
+
+  margin-inline: auto;
+
+  padding-inline: 22px;
+}
+
+@media (min-width: 768px) {
+  .site-container {
+    padding-inline: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .site-container {
+    padding-inline: 56px;
+  }
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   TECHNOLOGY MARQUEE
+========================================================= */
+
+.tech-marquee {
+  width: 100%;
+  overflow: hidden;
+
+  /*
+    Desktop edge fade.
+    Technologies smoothly fade in from the right
+    and fade out on the left.
+  */
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* =========================================================
+   MARQUEE TRACK
+========================================================= */
+
+.tech-marquee-track {
+  display: flex;
+  width: max-content;
+
+  will-change: transform;
+
+  animation: tech-marquee-left 38s linear infinite;
+}
+
+/* =========================================================
+   TECHNOLOGY SET
+========================================================= */
+
+.tech-marquee-set {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+
+  gap: 4.5rem;
+  padding-right: 4.5rem;
+}
+
+/* =========================================================
+   REVERSE ROW
+   Used for second mobile row
+========================================================= */
+
+.tech-marquee-reverse {
+  animation-name: tech-marquee-right;
+}
+
+/* =========================================================
+   LEFT MOVEMENT
+========================================================= */
+
+@keyframes tech-marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* =========================================================
+   RIGHT MOVEMENT
+========================================================= */
+
+@keyframes tech-marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* =========================================================
+   DESKTOP HOVER
+========================================================= */
+
+.tech-marquee:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+  /*
+    Smaller fade area on mobile so more of
+    each technology remains visible.
+  */
+
+  .tech-marquee {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+  }
+
+  /*
+    Slightly faster movement on smaller screens.
+  */
+
+  .tech-marquee-track {
+    animation-duration: 32s;
+  }
+
+  /*
+    Keep both mobile rows evenly spaced.
+  */
+
+  .tech-marquee-set {
+    gap: 2.75rem;
+    padding-right: 2.75rem;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   Respect reduced-motion preference
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee-track {
+    animation-play-state: paused;
+  }
 }
