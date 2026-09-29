@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ArrowUpRight from "./ArrowUpRight";
 
 const strengths = [
   "Responsive Websites",
@@ -53,9 +54,7 @@ export default function Founder() {
         ===================================================== */}
 
         <div className="grid gap-12 py-12 sm:py-16 lg:grid-cols-[1.12fr_0.88fr] lg:gap-20 lg:py-20">
-          {/* ===================================================
-              LEFT — CONTENT
-          =================================================== */}
+          {/* LEFT — CONTENT */}
 
           <div className="flex flex-col">
             <div>
@@ -86,9 +85,7 @@ export default function Founder() {
               </div>
             </div>
 
-            {/* =================================================
-                MOBILE PORTRAIT
-            ================================================= */}
+            {/* MOBILE PORTRAIT */}
 
             <div className="mt-10 lg:hidden">
               <div
@@ -139,9 +136,7 @@ export default function Founder() {
               </div>
             </div>
 
-            {/* =================================================
-                STRENGTHS
-            ================================================= */}
+            {/* STRENGTHS */}
 
             <div className="mt-12 border-t border-[var(--border)] lg:mt-16">
               {strengths.map((strength, index) => (
@@ -160,15 +155,13 @@ export default function Founder() {
                   </div>
 
                   <span className="text-[#FF6B22]">
-                    ↗
+                    <ArrowUpRight size={16} />
                   </span>
                 </div>
               ))}
             </div>
 
-            {/* =================================================
-                CTA
-            ================================================= */}
+            {/* CTA */}
 
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <a
@@ -196,7 +189,7 @@ export default function Founder() {
                 </span>
 
                 <span className="transition-colors duration-200 group-hover:text-[var(--background)]">
-                  ↗
+                  <ArrowUpRight size={18} />
                 </span>
               </a>
 
@@ -217,14 +210,12 @@ export default function Founder() {
                 "
               >
                 Instagram
-                <span>↗</span>
+                <ArrowUpRight size={15} />
               </a>
             </div>
           </div>
 
-          {/* ===================================================
-              RIGHT — DESKTOP PORTRAIT
-          =================================================== */}
+          {/* RIGHT — DESKTOP PORTRAIT */}
 
           <div className="hidden lg:block">
             <div
@@ -276,9 +267,7 @@ export default function Founder() {
           </div>
         </div>
 
-        {/* =====================================================
-            BOTTOM
-        ===================================================== */}
+        {/* BOTTOM */}
 
         <div className="flex flex-col gap-4 border-t border-[var(--border)] pt-7 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[var(--muted)]">

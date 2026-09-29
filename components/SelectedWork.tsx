@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import ArrowUpRight from "./ArrowUpRight";
 
 const projects = [
   {
@@ -102,27 +103,21 @@ export default function SelectedWork() {
             text-[var(--foreground)]
             transition-colors
             duration-300
-
             lg:grid
             lg:grid-cols-[0.72fr_1.28fr]
           "
         >
-          {/* =============================================
-              LEFT — PROJECT INFORMATION
-          ============================================= */}
+          {/* LEFT — PROJECT INFORMATION */}
 
           <div
             className="
               flex
               flex-col
               p-7
-
               sm:p-10
-
               lg:border-r
               lg:border-[var(--border)]
               lg:p-12
-
               xl:p-14
             "
           >
@@ -161,7 +156,6 @@ export default function SelectedWork() {
                   text-[15px]
                   leading-7
                   text-[var(--muted)]
-
                   sm:text-[16px]
                   sm:leading-8
                 "
@@ -210,7 +204,6 @@ export default function SelectedWork() {
                     text-lg
                     transition-all
                     duration-200
-
                     hover:border-[#FF6B22]
                     hover:bg-[#FF6B22]
                     hover:text-[#171717]
@@ -235,7 +228,6 @@ export default function SelectedWork() {
                     text-lg
                     transition-all
                     duration-200
-
                     hover:border-[#FF6B22]
                     hover:bg-[#FF6B22]
                     hover:text-[#171717]
@@ -265,7 +257,6 @@ export default function SelectedWork() {
                     pb-1
                     transition-colors
                     duration-200
-
                     group-hover:border-[#FF6B22]
                     group-hover:text-[#FF6B22]
                   "
@@ -278,20 +269,17 @@ export default function SelectedWork() {
                     text-[#FF6B22]
                     transition-transform
                     duration-200
-
                     group-hover:translate-x-1
                     group-hover:-translate-y-1
                   "
                 >
-                  ↗
+                  <ArrowUpRight size={18} />
                 </span>
               </a>
             </div>
           </div>
 
-          {/* =============================================
-              RIGHT — PROJECT SCREENSHOT
-          ============================================= */}
+          {/* RIGHT — PROJECT SCREENSHOT */}
 
           <div
             className="
@@ -302,12 +290,9 @@ export default function SelectedWork() {
               p-5
               transition-colors
               duration-300
-
               sm:p-8
-
               lg:min-h-[600px]
               lg:p-10
-
               xl:p-12
             "
           >
@@ -338,7 +323,6 @@ export default function SelectedWork() {
                   border-[var(--border)]
                   bg-white
                   shadow-[0_22px_55px_rgba(0,0,0,0.12)]
-
                   sm:rounded-[16px]
                 "
               >
@@ -377,16 +361,19 @@ export default function SelectedWork() {
                   leading-4
                   text-[#171717]
                   shadow-[0_12px_30px_rgba(0,0,0,0.16)]
-
                   sm:h-[82px]
                   sm:w-[82px]
-
                   lg:hidden
                 "
               >
-                View
-                <br />
-                project ↗
+                <span className="flex flex-col items-center">
+                  <span>View</span>
+
+                  <span className="inline-flex items-center gap-1">
+                    project
+                    <ArrowUpRight size={12} />
+                  </span>
+                </span>
               </a>
             </div>
 
@@ -406,7 +393,6 @@ export default function SelectedWork() {
                 tracking-[-0.08em]
                 text-[var(--foreground)]
                 opacity-[0.025]
-
                 lg:block
               "
             >
@@ -414,9 +400,7 @@ export default function SelectedWork() {
             </span>
           </div>
 
-          {/* =============================================
-              MOBILE NAVIGATION
-          ============================================= */}
+          {/* MOBILE NAVIGATION */}
 
           <div
             className="
@@ -427,7 +411,6 @@ export default function SelectedWork() {
               border-[var(--border)]
               px-7
               py-6
-
               lg:hidden
             "
           >

@@ -1,5 +1,5 @@
 "use client";
-
+import ArrowUpRight from "./ArrowUpRight";
 import { FormEvent, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -123,7 +123,7 @@ export default function Contact() {
                 </div>
 
                 <span className="text-lg text-[#FF6B22] transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                  ↗
+                  <ArrowUpRight size={18} />
                 </span>
               </a>
 
@@ -144,7 +144,7 @@ export default function Contact() {
                 </div>
 
                 <span className="text-lg text-[#FF6B22] transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                  ↗
+                  <ArrowUpRight size={18} />
                 </span>
               </a>
 
@@ -419,7 +419,7 @@ export default function Contact() {
                   </span>
 
                   <span className="transition-colors duration-200 group-hover:text-[var(--background-alt)]">
-                    ↗
+                    <ArrowUpRight size={18} />
                   </span>
                 </button>
 

@@ -1,4 +1,4 @@
-import type { IconType } from "react-icons";
+import { VscVscode } from "react-icons/vsc";
 import {
   SiHtml5,
   SiCss,
@@ -14,21 +14,66 @@ import {
 
 type Technology = {
   name: string;
-  icon: IconType;
+  icon: React.ElementType;
   color: string;
 };
 
 const technologies: Technology[] = [
-  { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-  { name: "CSS3", icon: SiCss, color: "#663399" },
-  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
-  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-  { name: "React", icon: SiReact, color: "#61DAFB" },
-  { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-  { name: "Git", icon: SiGit, color: "#F05032" },
-  { name: "GitHub", icon: SiGithub, color: "#FFFFFF" },
-  { name: "Vercel", icon: SiVercel, color: "#FFFFFF" },
+  {
+    name: "HTML5",
+    icon: SiHtml5,
+    color: "#E34F26",
+  },
+  {
+    name: "CSS3",
+    icon: SiCss,
+    color: "#663399",
+  },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    color: "#F7DF1E",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    color: "#3178C6",
+  },
+  {
+    name: "React",
+    icon: SiReact,
+    color: "#61DAFB",
+  },
+  {
+    name: "Next.js",
+    icon: SiNextdotjs,
+    color: "#FFFFFF",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+    color: "#06B6D4",
+  },
+  {
+    name: "Git",
+    icon: SiGit,
+    color: "#F05032",
+  },
+  {
+    name: "GitHub",
+    icon: SiGithub,
+    color: "#FFFFFF",
+  },
+  {
+    name: "Vercel",
+    icon: SiVercel,
+    color: "#FFFFFF",
+  },
+  {
+  name: "Visual Studio Code",
+  icon: VscVscode,
+  color: "#007ACC",
+},
 ];
 
 const mobileRowOne = technologies.slice(0, 5);
@@ -42,25 +87,24 @@ function TechnologyItem({
   return (
     <div className="group flex shrink-0 items-center gap-4">
       <div
-        className="
-          flex
-          h-[58px]
-          w-[58px]
-          shrink-0
-          items-center
-          justify-center
-          rounded-full
-          border
-          border-white/[0.12]
-          bg-white/[0.03]
-          transition-all
-          duration-300
-          group-hover:border-white/[0.28]
-          group-hover:bg-white/[0.07]
-          sm:h-[66px]
-          sm:w-[66px]
-        "
-      >
+  className="
+    flex
+    h-[58px]
+    aspect-square
+    shrink-0
+    items-center
+    justify-center
+    rounded-full
+    border
+    border-white/[0.12]
+    bg-white/[0.03]
+    transition-all
+    duration-300
+    group-hover:border-white/[0.28]
+    group-hover:bg-white/[0.07]
+    sm:h-[66px]
+  "
+>
         <Icon
           style={{ color }}
           className="
@@ -101,7 +145,7 @@ function MarqueeRow({
   reverse?: boolean;
 }) {
   return (
-    <div className="tech-marquee">
+    <div className="tech-marquee py-1">
       <div
         className={`tech-marquee-track ${
           reverse ? "tech-marquee-reverse" : ""
@@ -146,7 +190,9 @@ export default function Technologies() {
       "
     >
       <div className="site-container">
-        {/* HEADER */}
+        {/* =====================================================
+            HEADER
+        ===================================================== */}
 
         <div className="grid gap-10 border-b border-white/[0.12] pb-12 lg:grid-cols-[0.65fr_1.35fr] lg:items-end lg:pb-16">
           <div>
@@ -170,7 +216,9 @@ export default function Technologies() {
           </h2>
         </div>
 
-        {/* STATEMENT */}
+        {/* =====================================================
+            STATEMENT
+        ===================================================== */}
 
         <div className="border-b border-white/[0.12] py-12 sm:py-16 lg:py-20">
           <p className="max-w-[1150px] text-[clamp(2rem,4.4vw,4.8rem)] font-medium leading-[1.05] tracking-[-0.045em] text-[#77736D]">
@@ -208,7 +256,9 @@ export default function Technologies() {
         />
       </div>
 
-      {/* BOTTOM META */}
+      {/* =====================================================
+          BOTTOM META
+      ===================================================== */}
 
       <div className="site-container">
         <div className="flex flex-col gap-5 border-t border-white/[0.12] pt-8 sm:flex-row sm:items-center sm:justify-between">

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import ArrowUpRight from "./ArrowUpRight";
 
 const links = [
   { label: "Work", href: "#work" },
@@ -18,10 +19,6 @@ export default function Navbar() {
 
   const closeMenu = () => setMenuOpen(false);
 
-  // =========================================================
-  // NAVBAR SCROLL EFFECT
-  // =========================================================
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -37,10 +34,6 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // =========================================================
-  // THEME
-  // =========================================================
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("kws-theme");
@@ -78,10 +71,6 @@ export default function Navbar() {
     );
   };
 
-  // =========================================================
-  // PREVENT BACKGROUND SCROLL WHEN MOBILE MENU IS OPEN
-  // =========================================================
-
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -96,9 +85,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* =====================================================
-          MAIN NAVBAR
-      ===================================================== */}
+      {/* MAIN NAVBAR */}
 
       <header
         className={`
@@ -282,7 +269,7 @@ export default function Navbar() {
                     group-hover:text-[var(--background)]
                   "
                 >
-                  ↗
+                  <ArrowUpRight size={17} />
                 </span>
               </a>
 
@@ -318,9 +305,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* =====================================================
-          MOBILE FULL-SCREEN MENU
-      ===================================================== */}
+      {/* MOBILE FULL-SCREEN MENU */}
 
       {menuOpen && (
         <div
@@ -444,8 +429,8 @@ export default function Navbar() {
                 >
                   <span>{link.label}</span>
 
-                  <span className="text-base text-[#FF6B22]">
-                    ↗
+                  <span className="text-[#FF6B22]">
+                    <ArrowUpRight size={18} />
                   </span>
                 </a>
               ))}
@@ -473,7 +458,7 @@ export default function Navbar() {
                 "
               >
                 Start a Project
-                <span>↗</span>
+                <ArrowUpRight size={18} />
               </a>
             </div>
 

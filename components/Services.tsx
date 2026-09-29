@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import ArrowUpRight from "./ArrowUpRight";
 const services = [
   {
     title: "Business Websites",
@@ -191,7 +191,7 @@ export default function Services() {
                       }
                     `}
                   >
-                    ↗
+                    <ArrowUpRight size={17} />
                   </span>
                 </button>
               );
@@ -265,7 +265,7 @@ export default function Services() {
                 "
               >
                 Discuss your project
-                <span>↗</span>
+<ArrowUpRight size={17} />
               </a>
             </div>
           </div>

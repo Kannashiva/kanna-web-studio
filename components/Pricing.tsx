@@ -1,3 +1,4 @@
+import ArrowUpRight from "./ArrowUpRight";
 const plans = [
   {
     name: "Starter",
@@ -230,20 +231,20 @@ export default function Pricing() {
                     }
                   `}
                 >
-                  <span
-                    className={`
-                      transition-colors
-                      duration-200
+                 <span
+  className={`
+    transition-colors
+    duration-200
 
-                      ${
-                        plan.popular
-                          ? "text-white group-hover:text-[#171717]"
-                          : "text-[#F3F0E9] group-hover:text-[#171717]"
-                      }
-                    `}
-                  >
-                    {plan.cta}
-                  </span>
+    ${
+      plan.popular
+        ? "text-white group-hover:text-[#171717]"
+        : "text-[#F3F0E9] group-hover:text-[#171717]"
+    }
+  `}
+>
+  <ArrowUpRight size={18} />
+</span>
 
                   <span
                     className={`

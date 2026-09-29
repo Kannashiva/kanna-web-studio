@@ -1,3 +1,4 @@
+import ArrowUpRight from "./ArrowUpRight";
 const processSteps = [
   {
     number: "01",
@@ -146,7 +147,7 @@ export default function Process() {
                     lg:flex
                   "
                 >
-                  ↗
+                  <ArrowUpRight size={18} />
                 </div>
               </div>
             </div>
@@ -193,11 +194,11 @@ export default function Process() {
             "
           >
             <span className="transition-colors duration-200 group-hover:text-[var(--background-alt)]">
-              Start a Project
-            </span>
+  <ArrowUpRight size={18} />
+</span>
 
             <span className="transition-colors duration-200 group-hover:text-[var(--background-alt)]">
-              ↗
+              <ArrowUpRight size={18} />
             </span>
           </a>
         </div>

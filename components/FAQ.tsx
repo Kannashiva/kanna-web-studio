@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import ArrowUpRight from "./ArrowUpRight";
 const faqs = [
   {
     question: "How long does it take to build a website?",
@@ -134,8 +134,8 @@ export default function FAQ() {
               </span>
 
               <span className="text-[#171717] transition-colors duration-200 group-hover:text-[var(--background)]">
-                ↗
-              </span>
+  <ArrowUpRight size={18} />
+</span>
             </a>
           </div>
 

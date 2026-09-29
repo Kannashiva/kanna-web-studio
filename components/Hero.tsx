@@ -1,3 +1,4 @@
+import ArrowUpRight from "./ArrowUpRight";
 export default function Hero() {
   return (
     <section
@@ -287,16 +288,7 @@ export default function Hero() {
                     Explore our work
                   </span>
 
-                  <span
-                    className="
-                      text-[#FF6B22]
-                      transition-transform
-                      duration-200
-                      group-hover:translate-x-1
-                    "
-                  >
-                    ↗
-                  </span>
+                  <ArrowUpRight size={20} />
                 </a>
 
                 {/* START PROJECT */}
@@ -339,20 +331,7 @@ export default function Hero() {
                     a project
                   </span>
 
-                  <span
-                    className="
-                      mt-1
-                      block
-                      text-[#FF6B22]
-                      transition-all
-                      duration-300
-                      group-hover:translate-x-1
-                      group-hover:-translate-y-1
-                      group-hover:text-[#171717]
-                    "
-                  >
-                    ↗
-                  </span>
+                  <ArrowUpRight size={20} />
                 </a>
               </div>
             </div>

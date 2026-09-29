@@ -1,3 +1,4 @@
+import ArrowUpRight from "./ArrowUpRight";
 const navigation = [
   { label: "Work", href: "#work" },
   { label: "Services", href: "#services" },
@@ -132,7 +133,10 @@ export default function Footer() {
                   hover:text-[#FF6B22]
                 "
               >
-                WhatsApp ↗
+                <span className="inline-flex items-center gap-2">
+  WhatsApp
+  <ArrowUpRight size={14} />
+</span>
               </a>
 
               <a
@@ -147,7 +151,10 @@ export default function Footer() {
                   hover:text-[#FF6B22]
                 "
               >
-                Instagram ↗
+                <span className="inline-flex items-center gap-2">
+  Instagram
+  <ArrowUpRight size={14} />
+</span>
               </a>
 
               <p className="pt-2 text-sm text-[#8E8A84]">
