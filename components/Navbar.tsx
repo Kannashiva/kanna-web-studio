@@ -307,18 +307,19 @@ export default function Navbar() {
 
       {/* MOBILE FULL-SCREEN MENU */}
 
-      {menuOpen && (
-        <div
-          className="
-            fixed
-            inset-0
-            z-[100]
-            overflow-y-auto
-            bg-[var(--background)]/95
-            backdrop-blur-md
-            lg:hidden
-          "
-        >
+     {menuOpen && (
+  <div
+    className="
+      fixed
+      inset-0
+      z-[100]
+      overflow-y-auto
+      bg-[var(--background)]/5
+      backdrop-blur-xl
+      backdrop-saturate-100
+      lg:hidden
+    "
+  >
           <div className="site-container flex min-h-screen flex-col">
             {/* MOBILE MENU HEADER */}
 

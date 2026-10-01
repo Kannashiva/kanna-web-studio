@@ -1,4 +1,5 @@
 import ArrowUpRight from "./ArrowUpRight";
+
 const processSteps = [
   {
     number: "01",
@@ -179,6 +180,7 @@ export default function Process() {
               inline-flex
               w-fit
               items-center
+              justify-center
               gap-3
               rounded-full
               bg-[#FF6B22]
@@ -194,8 +196,8 @@ export default function Process() {
             "
           >
             <span className="transition-colors duration-200 group-hover:text-[var(--background-alt)]">
-  <ArrowUpRight size={18} />
-</span>
+              Start a project
+            </span>
 
             <span className="transition-colors duration-200 group-hover:text-[var(--background-alt)]">
               <ArrowUpRight size={18} />

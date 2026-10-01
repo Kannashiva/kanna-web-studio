@@ -1,4 +1,5 @@
 import ArrowUpRight from "./ArrowUpRight";
+
 const plans = [
   {
     name: "Starter",
@@ -231,21 +232,7 @@ export default function Pricing() {
                     }
                   `}
                 >
-                 <span
-  className={`
-    transition-colors
-    duration-200
-
-    ${
-      plan.popular
-        ? "text-white group-hover:text-[#171717]"
-        : "text-[#F3F0E9] group-hover:text-[#171717]"
-    }
-  `}
->
-  <ArrowUpRight size={18} />
-</span>
-
+                  {/* CTA TEXT */}
                   <span
                     className={`
                       transition-colors
@@ -253,12 +240,30 @@ export default function Pricing() {
 
                       ${
                         plan.popular
-                          ? "text-white group-hover:text-[#171717]"
+                          ? "text-[#171717]"
                           : "text-[#F3F0E9] group-hover:text-[#171717]"
                       }
                     `}
                   >
-                    ↗
+                    {plan.cta}
+                  </span>
+
+                  {/* SVG ARROW */}
+                  <span
+                    className={`
+                      transition-all
+                      duration-200
+                      group-hover:-translate-y-0.5
+                      group-hover:translate-x-0.5
+
+                      ${
+                        plan.popular
+                          ? "text-[#171717]"
+                          : "text-[#F3F0E9] group-hover:text-[#171717]"
+                      }
+                    `}
+                  >
+                    <ArrowUpRight size={18} />
                   </span>
                 </a>
               </div>

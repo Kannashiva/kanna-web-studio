@@ -325,13 +325,18 @@ export default function Hero() {
                     lg:text-[12px]
                   "
                 >
-                  <span className="block text-[var(--background)] transition-colors duration-300 group-hover:text-[#171717]">
-                    Start
-                    <br />
-                    a project
-                  </span>
+                  <span className="flex h-full w-full flex-col items-center justify-center text-center text-white">
+  <span className="text-[15px] font-semibold leading-[1.05]">
+    Start
+    <br />
+    a project
+  </span>
 
-                  <ArrowUpRight size={20} />
+  <ArrowUpRight
+    size={17}
+    className="mt-2 text-white"
+  />
+</span>
                 </a>
               </div>
             </div>
