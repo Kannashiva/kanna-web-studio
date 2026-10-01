@@ -291,53 +291,58 @@ export default function Hero() {
                   <ArrowUpRight size={20} />
                 </a>
 
-                {/* START PROJECT */}
+    {/* START PROJECT */}
 
-                <a
-                  href="#contact"
-                  aria-label="Start a project"
-                  className="
-                    group
-                    inline-flex
-                    h-[100px]
-                    w-[100px]
-                    shrink-0
-                    flex-col
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[var(--foreground)]
-                    text-center
-                    text-[11px]
-                    font-bold
-                    leading-[1.35]
-                    transition-all
-                    duration-300
+<a
+  href="#contact"
+  aria-label="Start a project"
+  className="
+    hero-start-project
+    group
+    inline-flex
+    h-[100px]
+    w-[100px]
+    shrink-0
+    flex-col
+    items-center
+    justify-center
+    rounded-full
+    text-center
+    text-[11px]
+    font-bold
+    leading-[1.35]
+    transition-all
+    duration-300
 
-                    hover:-translate-y-1
-                    hover:bg-[#FF6B22]
+    hover:-translate-y-1
 
-                    sm:h-[108px]
-                    sm:w-[108px]
+    sm:h-[108px]
+    sm:w-[108px]
 
-                    lg:h-[116px]
-                    lg:w-[116px]
-                    lg:text-[12px]
-                  "
-                >
-                  <span className="flex h-full w-full flex-col items-center justify-center text-center text-white">
-  <span className="text-[15px] font-semibold leading-[1.05]">
-    Start
-    <br />
-    a project
+    lg:h-[116px]
+    lg:w-[116px]
+    lg:text-[12px]
+
+   bg-[#171717]
+!text-white
+
+[.dark_&]:bg-[#FF6B22]
+[.dark_&]:!text-[#171717]
+  "
+>
+  <span className="flex h-full w-full flex-col items-center justify-center text-center">
+    <span className="text-[15px] font-semibold leading-[1.05]">
+      Start
+      <br />
+      a project
+    </span>
+
+    <ArrowUpRight
+      size={17}
+      className="mt-2"
+    />
   </span>
-
-  <ArrowUpRight
-    size={17}
-    className="mt-2 text-white"
-  />
-</span>
-                </a>
+</a>
               </div>
             </div>
           </div>
