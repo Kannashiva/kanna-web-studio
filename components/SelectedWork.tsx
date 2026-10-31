@@ -35,6 +35,16 @@ const projects = [
     detail: "Jewellery e-commerce • India",
     url: "https://www.thestudhouseelite.co.in/",
   },
+  {
+  title: "RKS Lift & Elevators",
+  category: "Corporate Website",
+  description:
+    "A premium corporate website showcasing elevator solutions for residential, commercial and industrial spaces, with dedicated service information and enquiry experiences.",
+  image: "/images/projects/rks-lifts.png",
+  technologies: "Next.js • React • TypeScript • Tailwind CSS • Vercel",
+  detail: "Corporate website • Pan India",
+  url: "https://www.rksliftsandelevators.co.in",
+},
 ];
 
 export default function SelectedWork() {
