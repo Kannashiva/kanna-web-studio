@@ -26,16 +26,6 @@ const projects = [
     url: "https://swa-sra-collections.vercel.app",
   },
   {
-    title: "The Stud House Elite",
-    category: "Jewellery E-Commerce",
-    description:
-      "A premium jewellery shopping experience designed to showcase elegant collections, simplify product discovery and make online shopping effortless.",
-    image: "/images/projects/thestudhouseelite.png",
-    technologies: "Next.js • React • Tailwind CSS • Vercel",
-    detail: "Jewellery e-commerce • India",
-    url: "https://www.thestudhouseelite.co.in/",
-  },
-  {
   title: "RKS Lift & Elevators",
   category: "Corporate Website",
   description:
